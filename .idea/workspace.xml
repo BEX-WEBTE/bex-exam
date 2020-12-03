@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa445193-4c00-41db-8d7d-797729d78735" name="Default Changelist" comment="" />
+    <list default="true" id="96ca9f52-e75d-4299-9992-c939b9fd745f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/pehula/css/gameStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/peluha/css/gameStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pehula/html/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/peluha/html/game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pehula/js/aboutMe.js" beforeDir="false" afterPath="$PROJECT_DIR$/peluha/js/aboutMe.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,11 +15,6 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="MichalPalencar" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1l9M6fGEUIgSfY6zwcuiyLtpZgu" />
@@ -74,20 +55,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="184" y="87" key="MergeDialog" timestamp="1607006989125">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="184" y="87" key="MergeDialog/0.1080.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1607006989125" />
-    <state x="598" y="286" key="MultipleFileMergeDialog" timestamp="1607006989135">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="598" y="286" key="MultipleFileMergeDialog/0.1080.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1607006989135" />
-    <state x="777" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607006919382">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="777" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.1080.1536.840/0.0.1920.1050@0.0.1920.1050" timestamp="1607006919382" />
   </component>
 </project>
