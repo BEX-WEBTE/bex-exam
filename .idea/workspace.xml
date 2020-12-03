@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="96ca9f52-e75d-4299-9992-c939b9fd745f" name="Default Changelist" comment="" />
+    <list default="true" id="96ca9f52-e75d-4299-9992-c939b9fd745f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/pehula/css/gameStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/peluha/css/gameStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pehula/html/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/peluha/html/game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pehula/js/aboutMe.js" beforeDir="false" afterPath="$PROJECT_DIR$/peluha/js/aboutMe.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,10 +38,22 @@
       <option name="presentableId" value="Default" />
       <updated>1607004679574</updated>
       <workItem from="1607004680728" duration="281000" />
+      <workItem from="1607004975180" duration="443000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
