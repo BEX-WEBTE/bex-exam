@@ -1,0 +1,38 @@
+.navbar{
+    margin: 0;
+    padding: 0;
+
+    font-family: "Roboto",sans-serif;
+    position: fixed;
+    left: 50%;
+    transform: translatex(-50%);
+    border: 3px solid black;
+    border-radius: 20px;
+    top: 20px;
+    background-color: rgba(255,255,255,.8);
+    backdrop-filter: blur(3px);
+}
+
+.navbar-toggler{
+    margin: 2px 150px 2px 150px;
+}
+
+
+.navbar-text{
+    color: black !important;
+}
+
+.nav-item{
+    margin: 0px 20px 0px 20px;
+    font-size: 20px;
+
+}
+
+.nav-item:hover{
+    color: black;
+    font-weight: bold;
+}
+
+.item-active{
+    font-weight: bold;
+}
