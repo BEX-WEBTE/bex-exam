@@ -1,15 +1,3 @@
-.navbar{
-    margin: 0;
-    padding: 0;
-    position: fixed;
-    left: 50%;
-    transform: translatex(-50%);
-    border: 3px solid black;
-    border-radius: 20px;
-    top: 20px;
-    background-color: rgba(255,255,255,.8);
-    backdrop-filter: blur(3px);
-}
 
 .navbar-toggler{
     margin: 2px 150px 2px 150px;
@@ -21,16 +9,65 @@
 }
 
 .nav-item{
-    margin: 0 20px 0 20px;
+    margin: 0px 20px 0px 20px;
     font-size: 20px;
 
 }
 
-.nav-item:hover{
+
+
+.navigation-bar {
+    margin: 0;
+    padding: 10px;
+    font-family: "Roboto", sans-serif;
+    position: fixed;
+    left: 50%;
+    transform: translatex(-50%);
+    top: 20px;
+    width: 400px;
+    z-index: 1;
+
+    border: 3px solid black;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(3px);
+}
+
+.navigation-bar-row{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: auto;
+    justify-content: space-between;
+}
+
+.item{
+    font-size: larger;
+    display: inline;
+    margin-right: 15px;
+    margin-left: 15px;
+    white-space: nowrap;
+}
+
+.item-link:link, .item-link:visited {
+    text-decoration: none;
     color: black;
-    font-weight: bold;
 }
 
 .item-active{
-    font-weight: bold;
+    font-weight: 900;
+}
+
+.item:hover{
+    color: black;
+    font-weight: 900;
+
+}
+
+@media screen and (max-width: 790px) {
+    .item {
+        display: block;
+
+    }
 }
