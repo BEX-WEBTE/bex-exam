@@ -1,5 +1,4 @@
 /*This is global stylesheet*/
-/*do not use !important !!!!!*/
 
 body{
     margin: 200px 10vw 50px 10vw;
@@ -7,6 +6,4 @@ body{
 
 a:link{
     color: black !important;
-
-
 }
