@@ -18,7 +18,7 @@
 }
 .thumbnail-container-event-title {
 
-    font-size: large;
+    font-size: larger;
 }
 
 .thumbnail-container-image {
@@ -28,15 +28,16 @@
 
 .thumbnail-container-title {
     font-weight: bold;
-    font-size: large;
+    font-size: x-large;
 }
 
 
 .thumbnail-container-name {
     text-align: left;
     position: absolute;
-    bottom: 0;
-    left: 5px;
+    bottom: 15px;
+    left: 20px;
+    font-size: large;
 }
 
 .first {
@@ -47,7 +48,7 @@
 .thumbnail-container-background {
     position: relative;
     border-radius: 10px;
-    padding: 10px;
+    padding: 20px;
     height: 100%;
     margin-right: 10px;
     margin-left: 10px;
