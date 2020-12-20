@@ -1,15 +1,15 @@
 /*This is global stylesheet*/
 
-body{
-    font-family: "Roboto",sans-serif;
+body {
+    font-family: "Roboto", sans-serif;
     margin: 200px 10vw 50px 10vw;
 }
 
-a:link{
+a:link {
     color: black !important;
 }
 
-a:link,a:visited {
+a:link, a:visited {
     text-decoration: none;
     color: inherit;
 
