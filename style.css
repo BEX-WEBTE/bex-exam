@@ -9,3 +9,8 @@ a:link{
     color: black !important;
 }
 
+a:link,a:visited {
+    text-decoration: none;
+    color: inherit;
+
+}

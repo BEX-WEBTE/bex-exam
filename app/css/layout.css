@@ -2,12 +2,20 @@
 .thumbnail-container {
     display: flex;
     flex-wrap: wrap;
+
+}
+
+.thumbnail-container-game:hover {
+    transform: scaleX(1);
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.125);
+    filter: saturate(120%);
 }
 
 .thumbnail-container-game {
     max-width: calc(25% - 30px);
     margin-bottom: 30px;
     min-height: 100%;
+    transition: 0.01s all;
 }
 
 .thumbnail-container-event {
@@ -72,7 +80,7 @@
 
 }
 
-.date-background {
+.name-day-background {
     background-color: #d7ace5
 }
 
@@ -144,4 +152,6 @@
         font-size: larger;
     }
 }
+
+
 
