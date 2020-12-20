@@ -24,6 +24,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
+    <script src="app/js/index.js"></script>
 
 
 </head>
@@ -42,22 +43,27 @@
 
 
 <article class="thumbnail-container">
-    <div class="thumbnail-container-game gamepad-background thumbnail-container-background">
+    <div class="thumbnail-container-game gamepad-background thumbnail-container-background"
+         onclick="changeView('./palencar/html/game.html')">
 
         <span class="thumbnail-container-title">Záhada stratenej perly</span>
         <img class="thumbnail-container-image gamepad-image" src="./app/assets/images/gamepad.png"
              alt="Thumbnail gamepad">
         <span class="thumbnail-container-name">Michal <span class="font-weight-bold">Palenčár</span> </span>
     </div>
-    <div class="thumbnail-container-game bomb-background thumbnail-container-background">
+    <div class="thumbnail-container-game bomb-background thumbnail-container-background"
+         onclick="changeView('./peluha/html/game.html')">
 
-        <span class="thumbnail-container-title">Vojna dvoch trpaslíkov</span>
+        <span class=" thumbnail-container-title
+    ">Vojna dvoch trpaslíkov</span>
         <img class="thumbnail-container-image bomb-image" src="./app/assets/images/bomb.png"
              alt="Thumbnail bomb">
         <span class="thumbnail-container-name">Matej <span class="font-weight-bold">Peluha</span> </span>
 
     </div>
-    <div class="thumbnail-container-game robot-background thumbnail-container-background">
+
+    <div class="thumbnail-container-game robot-background thumbnail-container-background "
+         onclick="changeView('./sremanak/html/game.html')">
         <span class="thumbnail-container-title ">Dobrodružstvá v džungli</span>
         <img class="thumbnail-container-image robot-image" src="./app/assets/images/robot.png"
              alt="Thumbnail robot">
@@ -65,23 +71,25 @@
                 class="bold-max">Sremaňák</span> </span>
     </div>
 
-    <div class="thumbnail-container-game cup-background thumbnail-container-background ">
+    <div class="thumbnail-container-game cup-background thumbnail-container-background"
+         onclick="changeView('./sokol/html/game.html')">
 
-        <span class="thumbnail-container-title ">Štyri cigančata a peso</span>
+        <span class=" thumbnail-container-title
+    ">Štyri cigančata a peso</span>
         <img class="thumbnail-container-image cup-image" src="./app/assets/images/cup.png"
              alt="Thumbnail cup">
         <span class="thumbnail-container-name">Kristian <span
                 class="bold-max">Sokol</span> </span>
     </div>
 
-    <div class="thumbnail-container-event attendance-background thumbnail-container-background ">
-
-                <span class="thumbnail-container-event-title">
-                  Túto stránku si za posledný <span class="bold-max">mesiac </span>navštívil</span>
+    <div class="thumbnail-container-event attendance-background thumbnail-container-background "
+         onclick="changeView('./app/attendance-component/attendance.html')">
+        <span class=" thumbnail-container-event-title">
+    Túto stránku si za posledný <span class="bold-max">mesiac </span>navštívil</span>
 
     </div>
-    <div class="thumbnail-container-event date-background thumbnail-container-background ">
-
+    <div class="thumbnail-container-event name-day-background thumbnail-container-background"
+         onclick="changeView('./app/-component/attendance.html')">
         <span class="thumbnail-container-event-title ">Dnes meniny oslavuje </span>
     </div>
 </article>
