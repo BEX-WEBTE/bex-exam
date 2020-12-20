@@ -1,2 +1,11 @@
 /*This is global stylesheet*/
-/*do not use !important !!!!!*/
+
+body{
+    font-family: "Roboto",sans-serif;
+    margin: 200px 10vw 50px 10vw;
+}
+
+a:link{
+    color: black !important;
+}
+
