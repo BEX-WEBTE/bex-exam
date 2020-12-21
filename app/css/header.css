@@ -47,7 +47,6 @@
 }
 
 
-
 @media screen and (max-width: 600px) {
     .navigation-bar {
         width: 350px;
@@ -59,7 +58,8 @@
     .navigation-bar {
         width: 300px;
     }
-    .item{
+
+    .item {
         margin-right: 5px;
         margin-left: 5px;
     }
