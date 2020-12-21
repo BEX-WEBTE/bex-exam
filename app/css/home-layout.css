@@ -5,22 +5,18 @@
 
 }
 
-.thumbnail-container-game:hover {
-
-    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.125);
-    filter: saturate(120%);
-    cursor: pointer;
-}
-
-.thumbnail-container-game:hover > .thumbnail-container-image {
-    transform: scale(1.25);
-}
-
 .thumbnail-container-game {
     max-width: calc(25% - 30px);
     margin-bottom: 30px;
     min-height: 100%;
     transition: 0.01s all;
+}
+
+.thumbnail-container-game:hover {
+
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.125);
+    filter: saturate(120%);
+    cursor: pointer;
 }
 
 .thumbnail-container-event {
@@ -38,13 +34,17 @@
     margin-top: -10px;
     margin-bottom: 30px;
     transition: 0.1s all;
+
+}
+
+.thumbnail-container-game:hover > .thumbnail-container-image {
+    transform: scale(1.25);
 }
 
 .thumbnail-container-title {
     font-weight: 900;
     font-size: 1.8vw;
 }
-
 
 .thumbnail-container-name {
     position: absolute;
