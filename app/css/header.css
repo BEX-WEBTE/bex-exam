@@ -46,8 +46,21 @@
 
 }
 
-@media screen and (max-width: 790px) {
-    .navigation-bar {
 
+
+@media screen and (max-width: 600px) {
+    .navigation-bar {
+        width: 350px;
+
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .navigation-bar {
+        width: 300px;
+    }
+    .item{
+        margin-right: 5px;
+        margin-left: 5px;
     }
 }
