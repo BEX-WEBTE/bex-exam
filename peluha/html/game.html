@@ -10,6 +10,7 @@
     <link href="../../app/css/header.css" rel="stylesheet">
     <link href="../../app/css/game-style.css" rel="stylesheet">
     <link href="../css/game.css" rel="stylesheet">
+    <script src="../js/game.js"></script>
 
 
 </head>
@@ -38,11 +39,11 @@
     </div>
 
 
-    <div class="game-container-canvas justify-content-center">
-        <img alt="Game picture" class="game-container-canvas-image" height="500"
+    <canvas id="game-canvas" class="game-container-canvas" width="1000" height="500">
+        <img id="game-image" alt="Game picture"  height="500"
              src="../../app/assets/images/1000x500.png"
              width="1000">
-    </div>
+    </canvas>
 </section>
 </body>
 </html>
