@@ -1,6 +1,7 @@
 /*This is global stylesheet*/
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 body {
 
     font-family: "Roboto", sans-serif;
@@ -15,4 +16,56 @@ a:link, a:visited {
     text-decoration: none;
     color: inherit;
 
+}
+
+button {
+    background: transparent;
+    box-shadow: 0 0 0 transparent;
+    border: 0 solid transparent;
+    text-shadow: 0 0 0 transparent;
+}
+
+button:hover {
+    background: transparent;
+    box-shadow: 0 0 0 transparent;
+    border: 0 solid transparent;
+    text-shadow: 0 0 0 transparent;
+}
+
+button:active {
+    outline: none;
+    border: none;
+}
+
+button:focus {
+    outline: 0;
+}
+
+.bold-max {
+    font-weight: 900;
+}
+
+.robot-background {
+    background-color: #FFC5C5;
+}
+
+.bomb-background {
+    background-color: #FFF7B0;
+}
+
+.cup-background {
+    background-color: #D7FFC5
+}
+
+.gamepad-background {
+    background-color: #C5F5FF;
+
+}
+
+.name-day-background {
+    background-color: #d7ace5
+}
+
+.attendance-background {
+    background-color: #EAEAEA;
 }

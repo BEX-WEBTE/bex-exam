@@ -2,21 +2,50 @@
 <html lang="sk">
 <head>
     <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Hra</title>
-    <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="../../app/css/header.css">
+    <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
+    <link href="../../style.css" rel="stylesheet">
+    <link href="../../app/css/header.css" rel="stylesheet">
+    <link href="../../app/css/game-style.css" rel="stylesheet">
+    <link href="../css/game.css" rel="stylesheet">
 
 
 </head>
 <body>
 <nav class="navigation-bar">
-
     <ul class="navigation-bar-row">
-        <li class="item item-active"><a class="item-link" href="#">Domov</a></li>
+        <li class="item"><a class="item-link" href="../../index.html">Domov</a></li>
         <li class="item"><a class="item-link" href="#"><span>O nás</span></a></li>
         <li class="item"><a class="item-link" href="#">Hry</a></li>
         <li class="item"><a class="item-link" href="#">Škola</a></li>
     </ul>
 </nav>
+
+
+<section class="game-container">
+    <div class="game-container-info cup-background">
+        <h1 class="game-container-info-title bold-max">Názov hry</h1>
+        <h2 class="game-container-info-name">Kristian<span class="bold-max"> Sokol</span></h2>
+    </div>
+
+    <div class="game-container-settings">
+        <button class="game-container-settings-button" id="start">Štart</button>
+        <button class="game-container-settings-button" id="reset">Reset</button>
+        <button class="game-container-settings-button" id="demo">Demo</button>
+        <span class="" id="time">00:00</span>
+    </div>
+
+
+    <div class="game-container-canvas justify-content-center">
+        <img alt="Game picture" class="game-container-canvas-image" height="500"
+             src="../../app/assets/images/1000x500.png"
+             width="1000">
+    </div>
+</section>
 </body>
 </html>
+
+
+
