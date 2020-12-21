@@ -1,10 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sk">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Hra</title>
+    <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
+    <link href="../../style.css" rel="stylesheet">
+    <link href="../../app/css/header.css" rel="stylesheet">
+    <link href="../../app/css/game-style.css" rel="stylesheet">
+    <link href="../css/game.css" rel="stylesheet">
+    <script src="../js/game.js"></script>
+
+
 </head>
-    <body>
-        <h1>Ahoj kamarat ktorosanF ABDGLKJ</h1>
-    </body>
+<body>
+<nav class="navigation-bar">
+    <ul class="navigation-bar-row">
+        <li class="item"><a class="item-link" href="../../index.html">Domov</a></li>
+        <li class="item"><a class="item-link" href="#"><span>O nás</span></a></li>
+        <li class="item"><a class="item-link" href="#">Hry</a></li>
+        <li class="item"><a class="item-link" href="#">Škola</a></li>
+    </ul>
+</nav>
+
+
+<section class="game-container">
+    <div class="game-container-info gamepad-background">
+        <h1 class="game-container-info-title bold-max">Názov hry</h1>
+        <h2 class="game-container-info-name">Michal<span class="bold-max"> Palenčár</span></h2>
+    </div>
+
+    <div class="game-container-settings">
+        <button class="game-container-settings-button" id="start">Štart</button>
+        <button class="game-container-settings-button" id="reset">Reset</button>
+        <button class="game-container-settings-button" id="demo">Demo</button>
+        <span class="" id="time">00:00</span>
+    </div>
+
+
+    <canvas id="game-canvas" class="game-container-canvas" width="1000" height="500">
+        <img id="game-image" alt="Game picture"  height="500"
+             src="../../app/assets/images/1000x500.png"
+             width="1000">
+    </canvas>
+</section>
+</body>
 </html>
