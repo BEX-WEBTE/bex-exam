@@ -9,6 +9,7 @@
     transform: scaleX(1);
     box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.125);
     filter: saturate(120%);
+    cursor: pointer;
 }
 
 .thumbnail-container-game {
@@ -48,11 +49,6 @@
     font-size: 1.2vw;
 }
 
-.bold-max {
-    font-weight: 900;
-
-}
-
 .thumbnail-container-background {
     position: relative;
     border-radius: 18px;
@@ -60,32 +56,6 @@
     margin-right: 15px;
     margin-left: 15px;
 
-}
-
-
-.robot-background {
-    background-color: #FFC5C5;
-}
-
-.bomb-background {
-    background-color: #FFF7B0;
-}
-
-.cup-background {
-    background-color: #D7FFC5
-}
-
-.gamepad-background {
-    background-color: #C5F5FF;
-
-}
-
-.name-day-background {
-    background-color: #d7ace5
-}
-
-.attendance-background {
-    background-color: #EAEAEA;
 }
 
 .robot-image {
