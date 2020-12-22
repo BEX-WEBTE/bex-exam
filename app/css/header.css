@@ -1,19 +1,4 @@
 
-.navbar-toggler {
-    margin: 2px 150px 2px 150px;
-}
-
-
-.navbar-text {
-    color: black !important;
-}
-
-.nav-item {
-    margin: 0 20px 0 20px;
-    font-size: 20px;
-}
-
-
 .navigation-bar {
     margin: 0;
     padding: 10px;
@@ -49,12 +34,6 @@
     color: #030000;
 }
 
-.item-link:link, .item-link:visited {
-    text-decoration: none;
-    color: inherit;
-
-}
-
 .item-active {
     font-weight: 900;
     color: black;
@@ -67,8 +46,21 @@
 
 }
 
-@media screen and (max-width: 790px) {
-    .navigation-bar {
 
+@media screen and (max-width: 600px) {
+    .navigation-bar {
+        width: 350px;
+
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .navigation-bar {
+        width: 300px;
+    }
+
+    .item {
+        margin-right: 5px;
+        margin-left: 5px;
     }
 }
