@@ -55,13 +55,6 @@ function isDroppable(draggedImage, dropContainer){
     const leftBound = bounds.left + bounds.width/3;
     const rightBound = bounds.right - bounds.width/3;
 
-    console.log("up: " + upBound);
-    console.log("down: " + downBound);
-    console.log("left: " + leftBound);
-    console.log("right: " + rightBound);
-    console.log("mouseX: " + mouseX);
-    console.log("mouseY: " + mouseY);
-
     if(mouseY < upBound || mouseY > downBound)
         return false;
     else if(mouseX < leftBound || mouseX > rightBound)
@@ -193,6 +186,9 @@ function initStartButton(){
     const startButton = document.getElementById("start");
 
     startButton.addEventListener("click", function (){
+        if(isDemoRunning)
+            return ;
+
         startButton.innerText = "Reštart";
         moveAllImagesOutside();
         resetStopWatch();
@@ -208,6 +204,9 @@ function initStopButton(){
 }
 
 function stopStopWatch(){
+    if(isDemoRunning)
+        return ;
+
     const startButton = document.getElementById("start");
     startButton.innerText = "Štart";
 
@@ -215,18 +214,6 @@ function stopStopWatch(){
     moveAllImagesInside();
     numberOfDropped = 0;
 }
-
-
-function onLoad() {
-    initStartButton();
-    initStopButton();
-    initModal();
-}
-
-
-window.onload = onLoad;
-
-
 
 function initModal() {
     const modal = document.getElementById("win-modal");
@@ -242,3 +229,133 @@ function initModal() {
         }
     }
 }
+
+
+function initDemoButton(){
+    const demoButton = document.getElementById("demo");
+
+    demoButton.addEventListener("click", showDemo);
+}
+
+let isDemoRunning = false;
+
+function showDemo(){
+    if(isDemoRunning)
+        return ;
+
+    resetStopWatch();
+
+    isDemoRunning = true;
+
+    moveAllImagesOutside();
+    setAllImagesDraggableFalse();
+    animateAllImagesInside();
+}
+
+function setAllImagesDraggableFalse(){
+    document.getElementById("pony09").draggable = false;
+    document.getElementById("pony09").classList.remove("pony-grab-cursor");
+    document.getElementById("pony08").draggable = false;
+    document.getElementById("pony08").classList.remove("pony-grab-cursor");
+    document.getElementById("pony07").draggable = false;
+    document.getElementById("pony07").classList.remove("pony-grab-cursor");
+    document.getElementById("pony06").draggable = false;
+    document.getElementById("pony06").classList.remove("pony-grab-cursor");
+    document.getElementById("pony05").draggable = false;
+    document.getElementById("pony05").classList.remove("pony-grab-cursor");
+    document.getElementById("pony04").draggable = false;
+    document.getElementById("pony04").classList.remove("pony-grab-cursor");
+    document.getElementById("pony03").draggable = false;
+    document.getElementById("pony03").classList.remove("pony-grab-cursor");
+    document.getElementById("pony02").draggable = false;
+    document.getElementById("pony02").classList.remove("pony-grab-cursor");
+    document.getElementById("pony01").draggable = false;
+    document.getElementById("pony01").classList.remove("pony-grab-cursor");
+}
+
+function animateAllImagesInside(){
+    animateImageInside("pony09");
+
+    setTimeout(function (){
+        normalizeAfterAnimation("pony09");
+        animateImageInside("pony08");
+    }, 2000);
+    setTimeout(function (){
+        normalizeAfterAnimation("pony08");
+        animateImageInside("pony07");
+    }, 4000);
+    setTimeout(function (){
+        normalizeAfterAnimation("pony07");
+        animateImageInside("pony06");
+    }, 6000);
+    setTimeout(function (){
+        normalizeAfterAnimation("pony06");
+        animateImageInside("pony05");
+    }, 8000);
+    setTimeout(function (){
+        normalizeAfterAnimation("pony05");
+        animateImageInside("pony04");
+    }, 10000);
+    setTimeout(function (){
+        normalizeAfterAnimation("pony04");
+        animateImageInside("pony03");
+    }, 12000);
+    setTimeout(function (){
+        normalizeAfterAnimation("pony03");
+        animateImageInside("pony02");
+    }, 14000);
+    setTimeout(function (){
+        normalizeAfterAnimation("pony02");
+        animateImageInside("pony01");
+    }, 16000);
+    setTimeout(function (){
+        normalizeAfterAnimation("pony01");
+        isDemoRunning = false;
+    }, 18000);
+}
+
+function animateImageInside(id){
+    const pony = document.getElementById(id);
+    pony.draggable = false;
+
+    const ponySize = pony.getBoundingClientRect();
+    pony.style.left = ponySize.left + window.scrollX + "px";
+    pony.style.top = ponySize.top + window.scrollY + "px";
+    pony.style.width = ponySize.width + "px";
+    pony.style.height = ponySize.height + "px";
+
+    document.getElementById("game-container-id").appendChild(pony);
+
+    pony.classList.add("pony-transition");
+
+    const ponyContainer = document.getElementById(id + "-container");
+    const ponyContainerSize = ponyContainer.getBoundingClientRect();
+
+    console.log(ponyContainerSize);
+
+
+    pony.style.left = ponyContainerSize.left  + window.scrollX + "px";
+    pony.style.top = ponyContainerSize.top  + window.scrollY + "px";
+
+}
+
+function normalizeAfterAnimation(id){
+    const pony = document.getElementById(id);
+    const ponyContainer = document.getElementById(id + "-container");
+    ponyContainer.appendChild(pony);
+    pony.classList.remove("pony-transition");
+}
+
+
+function onLoad() {
+    initStartButton();
+    initStopButton();
+    initModal();
+    initDemoButton();
+}
+
+
+window.onload = onLoad;
+
+
+

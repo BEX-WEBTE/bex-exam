@@ -186,3 +186,8 @@
     z-index: 0;
 }
 
+.pony-transition{
+    position: absolute;
+    transition: left 2s ease-out, top 2s ease-out;
+    cursor: default;
+}
