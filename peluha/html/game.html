@@ -11,6 +11,7 @@
     <link href="../../app/css/game-style.css" rel="stylesheet">
     <link href="../css/game.css" rel="stylesheet">
 
+
     <script src="../js/game.js"></script>
 
 </head>
@@ -33,80 +34,67 @@
 
     <div class="game-container-settings">
         <button class="game-container-settings-button" id="start">Štart</button>
-        <button class="game-container-settings-button" id="reset">Reset</button>
+        <button class="game-container-settings-button" id="stop">Stop</button>
         <button class="game-container-settings-button" id="demo">Demo</button>
-        <span class="" id="time">00:00</span>
+        <span class="" id="time">00:00:00</span>
     </div>
 
 
     <div class="game-container-canvas" id="game-canvas" >
+        <h2 id="game-text">Sem poskladaj obrázky</h2>
         <img alt="Game picture" id="game-image" src="../../app/assets/images/matejpeluha/my_little_pony.jpg" draggable="false">
-
 
         <div id="pony08-container" class="pony-container"
              ondrop="drop(event)" ondragover="allowDrop(event)">
             <img id="pony08" class="pony" src="../../app/assets/images/matejpeluha/pony08.png"
-                 alt="pony08" draggable="true" ondragstart="drag(event)" >
+                 alt="pony08" draggable="false" ondragstart="drag(event)" >
         </div>
         <div id="pony09-container" class="pony-container"
              ondrop="drop(event)" ondragover="allowDrop(event)">
             <img id="pony09" class="pony" src="../../app/assets/images/matejpeluha/pony09.png"
-                 alt="pony09" draggable="true" ondragstart="drag(event)" >
+                 alt="pony09" draggable="false" ondragstart="drag(event)" >
         </div>
         <div id="pony07-container" class="pony-container"
              ondrop="drop(event)" ondragover="allowDrop(event)" >
             <img id="pony07" class="pony" src="../../app/assets/images/matejpeluha/pony07.png"
-                 alt="pony07" draggable="true" ondragstart="drag(event)" >
+                 alt="pony07" draggable="false" ondragstart="drag(event)" >
         </div>
         <div id="pony06-container" class="pony-container"
              ondrop="drop(event)" ondragover="allowDrop(event)" >
             <img id="pony06" class="pony" src="../../app/assets/images/matejpeluha/pony06.png"
-                 alt="pony06" draggable="true" ondragstart="drag(event)" >
+                 alt="pony06" draggable="false" ondragstart="drag(event)" >
         </div>
         <div id="pony05-container" class="pony-container"
              ondrop="drop(event)" ondragover="allowDrop(event)" >
             <img id="pony05" class="pony" src="../../app/assets/images/matejpeluha/pony05.png"
-                 alt="pony05" draggable="true" ondragstart="drag(event)" >
+                 alt="pony05" draggable="false" ondragstart="drag(event)" >
         </div>
         <div id="pony04-container" class="pony-container"
              ondrop="drop(event)" ondragover="allowDrop(event)" >
             <img id="pony04" class="pony" src="../../app/assets/images/matejpeluha/pony04.png"
-                 alt="pony04" draggable="true" ondragstart="drag(event)" >
+                 alt="pony04" draggable="false" ondragstart="drag(event)" >
         </div>
         <div id="pony03-container" class="pony-container"
              ondrop="drop(event)" ondragover="allowDrop(event)" >
             <img id="pony03" class="pony" src="../../app/assets/images/matejpeluha/pony03.png"
-                 alt="pony03" draggable="true" ondragstart="drag(event)" >
+                 alt="pony03" draggable="false" ondragstart="drag(event)" >
         </div>
         <div id="pony02-container" class="pony-container"
              ondrop="drop(event)" ondragover="allowDrop(event)" >
             <img id="pony02" class="pony" src="../../app/assets/images/matejpeluha/pony02.png"
-                 alt="pony02" draggable="true" ondragstart="drag(event)" >
+                 alt="pony02" draggable="false" ondragstart="drag(event)" >
         </div>
         <div id="pony01-container" class="pony-container"
              ondrop="drop(event)" ondragover="allowDrop(event)" >
             <img id="pony01" class="pony" src="../../app/assets/images/matejpeluha/pony01.png"
-                 alt="pony01" draggable="true" ondragstart="drag(event)" >
+                 alt="pony01" draggable="false" ondragstart="drag(event)" >
         </div>
     </div>
 
+    <div id="pony08-out-container" class="pony-out-container"></div>
+    <div id="pony09-out-container" class="pony-out-container"></div>
+    <div id="allPony-out-container" class="pony-out-container"></div>
 
-    <section id="pony09-out-container" class="pony-out-container">
-
-    </section>
-
-    <section id="pony08-out-container" class="pony-out-container">
-
-    </section>
-    <section id="pony070605-out-container" class="pony-out-container">
-
-    </section>
-    <section id="pony040302-out-container" class="pony-out-container">
-
-    </section>
-    <section id="pony01-out-container" class="pony-out-container">
-
-    </section>
 
 
 

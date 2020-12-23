@@ -2,13 +2,26 @@
     background-color: #FFF7B0;
 }
 
+
 .game-container-canvas {
-    border-color: #FFF7B0;
+    border-color: #fff7b0;
+    background-color: rgba(255, 247, 176, 0.1);
     overflow: hidden;
     position: relative;
     margin-bottom: 10px;
+    max-width: 1000px;
+    max-height: 500px;
 }
 
+#game-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    -webkit-transform: translate(-50%, -50%);
+    font-size: 3vw;
+    opacity: 0.1;
+}
 
 #game-image{
     left: 0;
@@ -34,13 +47,18 @@
 .pony{
     max-width: 1000px;
     max-height: 500px;
-    cursor: grab;
+    cursor: default;
 
     margin-bottom: 10px;
 }
 
-.pony-out-container{
+.pony-grab-cursor{
+    cursor: grab;
+}
 
+.pony-out-container{
+    max-width: 1000px;
+    text-align: center;
 }
 
 .pony-container img{
