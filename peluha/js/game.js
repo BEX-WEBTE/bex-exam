@@ -70,12 +70,27 @@ function isDroppable(draggedImage, dropContainer){
     return true;
 }
 
+let numberOfDropped = 0;
+
 function finishDrop(draggedImage, dropContainer){
     dropContainer.appendChild(draggedImage);
     draggedImage.draggable = false;
     draggedImage.classList.remove("pony-grab-cursor");
-    draggedImage.style.width = "100%";
-    draggedImage.style.height = "100%";
+
+    numberOfDropped++;
+
+    if(numberOfDropped === 9)
+        finishGame();
+}
+
+function finishGame(){
+    stopStopWatch();
+
+    const showTime = document.getElementById("show-time")
+    showTime.innerText = "Čas: " + timeToString(elapsedTime);
+
+    const modal = document.getElementById("win-modal");
+    modal.style.display = "block";
 }
 
 function moveAllImagesOutside(){
@@ -182,27 +197,48 @@ function initStartButton(){
         moveAllImagesOutside();
         resetStopWatch();
         startStopWatch();
+        numberOfDropped = 0;
     })
 }
 
 function initStopButton(){
     const stopButton = document.getElementById("stop");
 
-    stopButton.addEventListener("click", function (){
-        const startButton = document.getElementById("start");
-        startButton.innerText = "Štart";
+    stopButton.addEventListener("click", stopStopWatch)
+}
 
-        clearInterval(timerInterval);
+function stopStopWatch(){
+    const startButton = document.getElementById("start");
+    startButton.innerText = "Štart";
 
-        moveAllImagesInside();
-    })
+    clearInterval(timerInterval);
+    moveAllImagesInside();
+    numberOfDropped = 0;
 }
 
 
 function onLoad() {
     initStartButton();
     initStopButton();
+    initModal();
 }
 
 
 window.onload = onLoad;
+
+
+
+function initModal() {
+    const modal = document.getElementById("win-modal");
+    const span = document.getElementsByClassName("close")[0];
+
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+}
