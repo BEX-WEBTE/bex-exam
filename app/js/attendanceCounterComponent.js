@@ -1,11 +1,14 @@
 class AttendanceCounterComponent extends HTMLElement{
     connectedCallback(){
         this.numberOfVisits = 0;
-        this.innerHTML = '<div class="thumbnail-container-event attendance-background thumbnail-container-background " >'
+        this.classList.add('thumbnail-container-event');
+        this.classList.add('attendance-background');
+        this.classList.add('thumbnail-container-background');
+        this.innerHTML = ''
             + '<span class=" thumbnail-container-event-title">'
             + 'Túto stránku si za posledný <span class="bold-max">mesiac </span>navštívil: '
             + this.numberOfVisits
-            +'krát</span> </div>';
+            +'krát</span> ';
 
 
         function setCookie(cname, cvalue, exdays) {
