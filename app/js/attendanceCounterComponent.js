@@ -1,15 +1,9 @@
 class AttendanceCounterComponent extends HTMLElement{
     connectedCallback(){
-        this.numberOfVisits = 0;
         this.classList.add('thumbnail-container-event');
         this.classList.add('attendance-background');
         this.classList.add('thumbnail-container-background');
-        this.innerHTML = ''
-            + '<span class=" thumbnail-container-event-title">'
-            + 'Túto stránku si za posledný <span class="bold-max">mesiac </span>navštívil: '
-            + this.numberOfVisits
-            +'krát</span> ';
-
+        this.innerHTML = "";
 
         function setCookie(cname, cvalue, exdays) {
             const date = new Date();
@@ -35,16 +29,26 @@ class AttendanceCounterComponent extends HTMLElement{
         }
 
         function handleCookies(){
+            let numberOfVisits = 1;
             const cookiesNumberOfVisits = getCookie("numberOfVisits");
             if(cookiesNumberOfVisits) {
-
-                console.log("yeah")
+                numberOfVisits = parseInt(cookiesNumberOfVisits, 10) + 1;
             }
+            setCookie("numberOfVisits", "" + numberOfVisits, 30);
 
-           this.numberOfVisits = 5;
+            console.log(numberOfVisits);
+
+            return numberOfVisits;
         }
 
-        handleCookies();
+        const numberOfVisits = handleCookies();
+
+        this.innerHTML = ''
+            + '<span class=" thumbnail-container-event-title">'
+            + 'Túto stránku si za posledný <span class="bold-max">mesiac </span>navštívil: '
+            + numberOfVisits
+            +'krát</span> ';
+
     }
 }
 
