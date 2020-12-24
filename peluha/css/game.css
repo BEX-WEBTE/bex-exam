@@ -191,3 +191,17 @@
     transition: left 2s ease-out, top 2s ease-out;
     cursor: default;
 }
+
+#wait-for-demo{
+    font-size: x-large;
+    opacity: 0;
+    text-align: center;
+    color: black;
+    transition: opacity 0.5s linear;
+    border: 1px solid #ff0000;
+    border-radius: 10px;
+    background-color: rgba(255 ,0 ,0 ,0.7);
+    padding: 5px;
+    position: absolute;
+    z-index: 50;
+}

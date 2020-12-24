@@ -186,8 +186,10 @@ function initStartButton(){
     const startButton = document.getElementById("start");
 
     startButton.addEventListener("click", function (){
-        if(isDemoRunning)
-            return ;
+        if(isDemoRunning) {
+            showDemoWarning();
+            return;
+        }
 
         startButton.innerText = "Reštart";
         moveAllImagesOutside();
@@ -204,8 +206,10 @@ function initStopButton(){
 }
 
 function stopStopWatch(){
-    if(isDemoRunning)
-        return ;
+    if(isDemoRunning) {
+        showDemoWarning();
+        return;
+    }
 
     const startButton = document.getElementById("start");
     startButton.innerText = "Štart";
@@ -240,8 +244,10 @@ function initDemoButton(){
 let isDemoRunning = false;
 
 function showDemo(){
-    if(isDemoRunning)
-        return ;
+    if(isDemoRunning) {
+        showDemoWarning();
+        return;
+    }
 
     resetStopWatch();
 
@@ -250,6 +256,17 @@ function showDemo(){
     moveAllImagesOutside();
     setAllImagesDraggableFalse();
     animateAllImagesInside();
+}
+
+function showDemoWarning(){
+    const waitHeader = document.getElementById("wait-for-demo");
+
+    waitHeader.style.opacity = "1";
+    setTimeout(function (){
+        waitHeader.style.opacity = "0";
+
+    }, 2000)
+
 }
 
 function setAllImagesDraggableFalse(){
