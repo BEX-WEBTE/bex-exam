@@ -50,10 +50,10 @@ function isDroppable(draggedImage, dropContainer){
         return false;
 
     const bounds = dropContainer.getBoundingClientRect();
-    const upBound = bounds.top + bounds.height/3;
-    const downBound = bounds.bottom - bounds.height/3;
-    const leftBound = bounds.left + bounds.width/3;
-    const rightBound = bounds.right - bounds.width/3;
+    const upBound = bounds.top ;
+    const downBound = bounds.bottom ;
+    const leftBound = bounds.left ;
+    const rightBound = bounds.right;
 
     if(mouseY < upBound || mouseY > downBound)
         return false;
@@ -347,9 +347,6 @@ function animateImageInside(id){
 
     const ponyContainer = document.getElementById(id + "-container");
     const ponyContainerSize = ponyContainer.getBoundingClientRect();
-
-    console.log(ponyContainerSize);
-
 
     pony.style.left = ponyContainerSize.left  + window.scrollX + "px";
     pony.style.top = ponyContainerSize.top  + window.scrollY + "px";
