@@ -199,12 +199,6 @@ function initStartButton(){
     })
 }
 
-function initStopButton(){
-    const stopButton = document.getElementById("stop");
-
-    stopButton.addEventListener("click", stopStopWatch)
-}
-
 function stopStopWatch(){
     if(isDemoRunning) {
         showDemoWarning();
@@ -363,7 +357,6 @@ function normalizeAfterAnimation(id){
 
 function onLoad() {
     initStartButton();
-    initStopButton();
     initModal();
     initDemoButton();
 }
