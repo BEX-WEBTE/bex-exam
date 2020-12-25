@@ -20,7 +20,11 @@
     <script crossorigin="anonymous"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+    <script src="app/js/attendanceCookiesHandler.js"></script>
     <script src="app/js/attendanceCounterComponent.js"></script>
+
     <script src="app/js/index.js"></script>
 
 
@@ -81,7 +85,8 @@
                 class="bold-max">Sokol</span> </span>
     </div>
 
-    <attendance-counter id="attendance-counter"></attendance-counter>
+    <attendance-counter class="attendance-background thumbnail-container-event thumbnail-container-background"
+                        id="attendance-counter"></attendance-counter>
 
     <div class="thumbnail-container-event name-day-background thumbnail-container-background"
          onclick="changeView('./app/-component/attendance.html')">
