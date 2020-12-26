@@ -41,10 +41,37 @@ class NameDayFinderComponent extends HTMLElement{
         }
 
         function initNameInput(){
+            showNames()
+        }
+
+        function showNames(){
             const nameInput = document.getElementById("name-input");
+            const textName = document.getElementById("text-name");
+            const activeCountry = document.getElementsByClassName("active-country")[0].innerText;
             const date = getFormattedDate();
 
-            nameInput.value = getNames(date, "SK");
+            const slovakNames = getNames(date, activeCountry);
+            nameInput.value = slovakNames;
+            textName.innerText = slovakNames;
+
+            if(activeCountry === "SK")
+                showSlovakExtendedNames(date);
+            else{
+                const moreNamesButton = document.getElementById("more-names-button");
+                moreNamesButton.style.display = "none";
+            }
+        }
+
+        function showSlovakExtendedNames(date){
+            const slovakExtendedNames = getNames(date, "SKd");
+            const moreNames = document.getElementById("more-names");
+            const moreNamesButton = document.getElementById("more-names-button");
+            moreNamesButton.style.display = "unset";
+
+            if(moreNames.innerText === "")
+                moreNames.innerText = "Žiadne mená";
+            else
+                moreNames.innerText = slovakExtendedNames;
         }
 
         function getFormattedDate(){
@@ -103,6 +130,7 @@ class NameDayFinderComponent extends HTMLElement{
             activeCountry[0].classList.remove("active-country");
 
             country.classList.add("active-country");
+            showNames();
         }
 
         initDateInput();
