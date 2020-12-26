@@ -86,6 +86,7 @@ function finishGame(){
     modal.style.display = "block";
 }
 
+
 function moveAllImagesOutside(){
     moveImageOutside("pony01");
     moveImageOutside("pony02");
@@ -244,6 +245,9 @@ function showDemo(){
     }
 
     resetStopWatch();
+
+    const startButton = document.getElementById("start");
+    startButton.innerText = "Štart";
 
     isDemoRunning = true;
 
