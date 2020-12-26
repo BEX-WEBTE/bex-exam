@@ -47,7 +47,8 @@ class NameDayFinderComponent extends HTMLElement{
 
         function showTodayDate(){
             const textToday = document.getElementById("text-today");
-            const formattedDate = getFormattedDate();
+            const date = getTodayDate();
+            const formattedDate = getFormattedDate(date);
 
             const month = formattedDate.substring(0, 2);
             const day = formattedDate.substring(2, 4);
@@ -65,7 +66,8 @@ class NameDayFinderComponent extends HTMLElement{
         function showNameInput(){
             const nameInput = document.getElementById("name-input");
             const activeCountry = document.getElementsByClassName("active-country")[0].innerText;
-            const date = getFormattedDate();
+            let date = document.getElementById("date-input").value;
+            date = getFormattedDate(date);
 
             const names = getNames(date, activeCountry);
             nameInput.value = names;
@@ -74,24 +76,25 @@ class NameDayFinderComponent extends HTMLElement{
         function showHolidaysInput(){
             const holidaysInput = document.getElementById("holiday-input");
             const activeCountry = document.getElementsByClassName("active-country")[0].innerText;
-            const date = getFormattedDate();
+            let date = document.getElementById("date-input").value;
+            date = getFormattedDate(date);
 
             const holidays = getHolidays(date, activeCountry);
             holidaysInput.value = holidays;
         }
 
         function initNameInput(){
-            showNames()
+            showTextNames();
+            showNameInput();
         }
 
-        function showNames(){
-            const nameInput = document.getElementById("name-input");
+        function showTextNames(){
             const textName = document.getElementById("text-name");
             const activeCountry = document.getElementsByClassName("active-country")[0].innerText;
-            const date = getFormattedDate();
+            let date = getTodayDate();
+            date = getFormattedDate(date);
 
             const names = getNames(date, activeCountry);
-            nameInput.value = names;
             textName.innerText = names;
 
             if(activeCountry === "SK")
@@ -100,6 +103,17 @@ class NameDayFinderComponent extends HTMLElement{
                 const moreNamesButton = document.getElementById("more-names-button");
                 moreNamesButton.style.display = "none";
             }
+        }
+
+        function getTodayDate(){
+            const date = new Date();
+            const input = document.createElement("INPUT");
+            input.setAttribute("type", "date");
+            input.valueAsDate = date;
+
+            console.log(input);
+
+            return input.value;
         }
 
 
@@ -112,9 +126,7 @@ class NameDayFinderComponent extends HTMLElement{
             moreNames.innerText = slovakExtendedNames;
         }
 
-        function getFormattedDate(){
-            const dateInput = document.getElementById("date-input");
-            const date = dateInput.value;
+        function getFormattedDate(date){
             const splitDate = date.split("-");
 
             return splitDate[1] + splitDate[2];
@@ -164,15 +176,17 @@ class NameDayFinderComponent extends HTMLElement{
 
 
         function initHolidayInput(){
-            showHolidays();
+            showTextHolidays();
+            showHolidaysInput();
         }
 
 
-        function showHolidays(){
+        function showTextHolidays(){
             const holidayInput = document.getElementById("holiday-input");
             const textHoliday = document.getElementById("text-holiday");
             const activeCountry = document.getElementsByClassName("active-country")[0].innerText;
-            const date = getFormattedDate();
+            let date = getTodayDate();
+            date = getFormattedDate(date);
 
             const holidays = getHolidays(date, activeCountry);
 
@@ -222,8 +236,10 @@ class NameDayFinderComponent extends HTMLElement{
 
             country.classList.add("active-country");
 
-            showNames();
-            showHolidays();
+            showTextNames();
+            showNameInput();
+            showTextHolidays();
+            showHolidaysInput();
         }
 
 
