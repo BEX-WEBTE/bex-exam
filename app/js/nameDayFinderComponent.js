@@ -19,12 +19,11 @@ class NameDayFinderComponent extends HTMLElement{
         this.innerHTML += '<div class="nameday-input-div"><label for="date-input">Dňa  </label>'
                             + '<input class="nameday-input" type="date" id="date-input" name="date-input"></div>';
 
-        this.innerHTML += '<div class="nameday-input-div"><label for="holiday-input">Sviatok  </label>'
-            + '<input class="nameday-input" type="text" id="holiday-input" name="holiday-input"></div>';
-
         this.innerHTML += '<div class="nameday-input-div"><label for="name-input">Meno  </label>'
                             + '<input class="nameday-input" type="text" id="name-input" name="name-input">';
 
+        this.innerHTML += '<div class="nameday-input-div"><label for="holiday-input">Sviatok  </label>'
+            + '<input class="nameday-input" type="text" id="holiday-input" name="holiday-input" disabled></div>';
 
         this.innerHTML += '<ul id="country-chooser">'
                             + '<li class="active-country country"><span>SK</span></li>'
