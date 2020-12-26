@@ -18,11 +18,12 @@ class NameDayFinderComponent extends HTMLElement{
         this.innerHTML += '<div class="nameday-input-div"><label for="date-input">Dňa  </label>'
                             + '<input class="nameday-input" type="date" id="date-input" name="date-input"></div>';
 
+        this.innerHTML += '<div class="nameday-input-div"><label for="holiday-input">Sviatok  </label>'
+            + '<input class="nameday-input" type="text" id="holiday-input" name="holiday-input"></div>';
+
         this.innerHTML += '<div class="nameday-input-div"><label for="name-input">Meno  </label>'
                             + '<input class="nameday-input" type="text" id="name-input" name="name-input">';
 
-        this.innerHTML += '<div class="nameday-input-div"><label for="holiday-input">Sviatok  </label>'
-                            + '<input class="nameday-input" type="text" id="holiday-input" name="holiday-input"></div>';
 
         this.innerHTML += '<ul id="country-chooser">'
                             + '<li class="active-country country"><span>SK</span></li>'
@@ -41,11 +42,47 @@ class NameDayFinderComponent extends HTMLElement{
 
         function initNameInput(){
             const nameInput = document.getElementById("name-input");
-            nameInput.value = "Matej";
+            const date = getFormattedDate();
+
+            nameInput.value = getNames(date, "SK");
         }
 
-        function getName(date){
+        function getFormattedDate(){
+            const dateInput = document.getElementById("date-input");
+            const date = dateInput.value;
+            const splitDate = date.split("-");
 
+            return splitDate[1] + splitDate[2];
+        }
+
+        function getNames(date, country){
+            const xml = getLoadedXml();
+            const allZaznam = xml.getElementsByTagName("zaznam");
+            const zaznam = getZaznam(allZaznam, date);
+            const names = zaznam.getElementsByTagName(country)[0].innerHTML;
+
+            return names;
+        }
+
+        function getLoadedXml(){
+            let xmlhttp;
+            if (window.XMLHttpRequest) {
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            xmlhttp.open("GET", "app/xml/meniny.xml", false);
+            xmlhttp.send();
+            return  xmlhttp.responseXML;
+        }
+
+        function getZaznam(allZaznam, date){
+            for(let zaznam of allZaznam){
+                const den = zaznam.getElementsByTagName("den")[0];
+                if(den.innerHTML === date)
+                    return zaznam;
+            }
         }
 
         function initHolidayInput(){
