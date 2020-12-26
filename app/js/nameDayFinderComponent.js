@@ -59,6 +59,7 @@ class NameDayFinderComponent extends HTMLElement{
             const dateInput = document.getElementById("date-input");
 
             showNameInput();
+            showHolidaysInput();
         }
 
         function showNameInput(){
@@ -68,6 +69,15 @@ class NameDayFinderComponent extends HTMLElement{
 
             const names = getNames(date, activeCountry);
             nameInput.value = names;
+        }
+
+        function showHolidaysInput(){
+            const holidaysInput = document.getElementById("holiday-input");
+            const activeCountry = document.getElementsByClassName("active-country")[0].innerText;
+            const date = getFormattedDate();
+
+            const holidays = getHolidays(date, activeCountry);
+            holidaysInput.value = holidays;
         }
 
         function initNameInput(){
@@ -115,12 +125,16 @@ class NameDayFinderComponent extends HTMLElement{
             const allZaznam = xml.getElementsByTagName("zaznam");
             const zaznam = getZaznam(allZaznam, date);
 
-            console.log(zaznam);
-
             if(zaznam === '<zaznam></zaznam>')
                 return "-";
 
-            const names = zaznam.getElementsByTagName(country)[0].innerHTML;
+            const allNamesCountry = zaznam.getElementsByTagName(country);
+
+            let names;
+            if(allNamesCountry.length > 0)
+                names = allNamesCountry[0].innerHTML;
+            else
+                return "-";
 
             return names;
         }
@@ -150,11 +164,49 @@ class NameDayFinderComponent extends HTMLElement{
 
 
         function initHolidayInput(){
-            const holidayInput = document.getElementById("holiday-input");
-            holidayInput.value = "Vianoce";
+            showHolidays();
         }
 
 
+        function showHolidays(){
+            const holidayInput = document.getElementById("holiday-input");
+            const textHoliday = document.getElementById("text-holiday");
+            const activeCountry = document.getElementsByClassName("active-country")[0].innerText;
+            const date = getFormattedDate();
+
+            const holidays = getHolidays(date, activeCountry);
+
+            holidayInput.value = holidays;
+            textHoliday.innerText = holidays;
+        }
+
+        function getHolidays(date, country){
+            const xml = getLoadedXml();
+            const allZaznam = xml.getElementsByTagName("zaznam");
+            const zaznam = getZaznam(allZaznam, date);
+
+            if(zaznam === '<zaznam></zaznam>')
+                return "-";
+
+            let allSviatky;
+            if(country === "SK")
+                allSviatky = zaznam.getElementsByTagName("SKsviatky");
+            else if(country === "CZ")
+                allSviatky = zaznam.getElementsByTagName("CZsviatky");
+            else
+                return  "-";
+
+            let holidays;
+            if(allSviatky.length > 0)
+                holidays = allSviatky[0].innerHTML;
+            else
+                return "-";
+
+            if(!holidays)
+                return "-";
+
+            return holidays;
+        }
 
         function initCountryChooser(){
             const allCountries = document.getElementsByClassName("country");
@@ -171,6 +223,7 @@ class NameDayFinderComponent extends HTMLElement{
             country.classList.add("active-country");
 
             showNames();
+            showHolidays();
         }
 
 
