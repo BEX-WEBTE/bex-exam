@@ -19,11 +19,16 @@ class NameDayFinderComponent extends HTMLElement{
         this.innerHTML += '<div class="nameday-input-div"><label for="date-input">Dňa  </label>'
                             + '<input class="nameday-input" type="date" id="date-input" name="date-input"></div>';
 
+        this.innerHTML += '<div class="nameday-input-div"><label for="holiday-input">Sviatok  </label>'
+            + '<input class="nameday-input" type="text" id="holiday-input" name="holiday-input" disabled></div>';
+
+
         this.innerHTML += '<div class="nameday-input-div"><label for="name-input">Meno  </label>'
                             + '<input class="nameday-input" type="text" id="name-input" name="name-input">';
 
-        this.innerHTML += '<div class="nameday-input-div"><label for="holiday-input">Sviatok  </label>'
-            + '<input class="nameday-input" type="text" id="holiday-input" name="holiday-input" disabled></div>';
+        this.innerHTML += '<div id="more-names-under-input-div"><em class="bold-max">Všetky mená: </em>'
+                            + '<span id="more-names-under-input">gfdgffdgfd</span>'
+                            + '</div>'
 
         this.innerHTML += '<ul id="country-chooser">'
                             + '<li class="active-country country"><span>SK</span></li>'
@@ -64,12 +69,30 @@ class NameDayFinderComponent extends HTMLElement{
 
         function showNameInput(){
             const nameInput = document.getElementById("name-input");
-            const activeCountry = document.getElementsByClassName("active-country")[0].innerText;
+            const moreNames = document.getElementById("more-names-under-input");
+            const moreNamesDiv = document.getElementById("more-names-under-input-div");
+
+
             let date = document.getElementById("date-input").value;
             date = getFormattedDate(date);
 
+            let activeCountry = document.getElementsByClassName("active-country")[0].innerText;
+            if(activeCountry === "SK")
+                activeCountry = "SKd";
+
             const names = getNames(date, activeCountry);
-            nameInput.value = names;
+            const dividedNames = names.split(",");
+
+            if(dividedNames.length > 1){
+                nameInput.value = dividedNames[0]
+                moreNames.innerText = names;
+                moreNamesDiv.style.display = "unset";
+            }
+            else {
+                nameInput.value = names;
+                moreNames.innerText = names;
+                moreNamesDiv.style.display = "none";
+            }
         }
 
         function showHolidaysInput(){
@@ -109,8 +132,6 @@ class NameDayFinderComponent extends HTMLElement{
             const input = document.createElement("INPUT");
             input.setAttribute("type", "date");
             input.valueAsDate = date;
-
-            console.log(input);
 
             return input.value;
         }
