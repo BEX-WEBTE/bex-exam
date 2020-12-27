@@ -1,0 +1,108 @@
+{
+  "images": [
+    {
+      "id": "0",
+      "name": "web",
+      "format": ".svg",
+      "targetCoordinates": {
+        "x": 0,
+        "y": 0
+      },
+      "scale": {
+        "width": 0.1,
+        "height": 0.1
+      }
+    },
+    {
+      "id": "1",
+      "name": "knife",
+      "format": ".svg",
+      "targetCoordinates": {
+        "x": 669,
+        "y": 97
+      },
+      "scale": {
+        "width": 0.20,
+        "height": 0.20
+      }
+    },
+    {
+      "id": "2",
+      "name": "jason",
+      "format": ".svg",
+      "targetCoordinates": {
+        "x": 212,
+        "y": 78
+      },
+      "scale": {
+        "width": 0.55,
+        "height": 0.55
+      }
+    },
+    {
+      "id": "3",
+      "name": "balloon",
+      "format": ".svg",
+      "targetCoordinates": {
+        "x": 390,
+        "y": 7
+      },
+      "scale": {
+        "width": 0.55,
+        "height": 0.55
+      }
+    },
+    {
+      "id": "4",
+      "name": "scream",
+      "format": ".svg",
+      "targetCoordinates": {
+        "x": 508,
+        "y": 62
+      },
+      "scale": {
+        "width": 0.55,
+        "height": 0.55
+      }
+    },
+    {
+      "id": "5",
+      "name": "jigsaw",
+      "format": ".svg",
+      "targetCoordinates": {
+        "x": 198,
+        "y": 260
+      },
+      "scale": {
+        "width": 0.55,
+        "height": 0.55
+      }
+    },
+    {
+      "id": "6",
+      "name": "it",
+      "format": ".svg",
+      "targetCoordinates": {
+        "x": 335,
+        "y": 190
+      },
+      "scale": {
+        "width": 0.52,
+        "height": 0.52
+      }
+    },
+    {
+      "id": "7",
+      "name": "chucky",
+      "format": ".svg",
+      "targetCoordinates": {
+        "x": 575,
+        "y": 233
+      },
+      "scale": {
+        "width": 0.55,
+        "height": 0.55
+      }
+    }
+  ]
+}
