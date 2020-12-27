@@ -7,7 +7,6 @@
 
 .nameday-input-div{
     margin-top: 5px;
-    text-align: center;
 }
 
 #text-name, #text-holiday{
@@ -20,24 +19,40 @@
 }
 
 .nameday-input{
-    width: 100%;
-    margin-left: 0;
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 450px){
+    .nameday-input{
+        width: 100%;
+        margin-left: 0;
+    }
+    .nameday-input-div{
+        text-align: center;
+    }
 }
 
 ul#country-chooser{
     text-align: center;
+    position: relative;
     width: 100%;
     padding: 0;
     margin-top: 20px;
     margin-bottom: 0;
+
 }
 
 ul#country-chooser li{
-    display: inline;
-    margin: 7%;
+    display: inline-block;
     cursor: pointer;
     transition: all 0.5s;
+    margin-left: 10px;
 }
+
+ul#country-chooser li:nth-child(1){
+    margin-left: 0;
+}
+
 
 ul#country-chooser li:hover{
     font-weight: bold;

@@ -6,7 +6,7 @@ class NameDayFinderComponent extends HTMLElement{
                             + '<br><em id="text-name" class="bold-max"> Matej </em>'
                             + '<span class="button-with-icon">'
                             + '<button id="more-names-button">'
-                            + '<a id="more-names-a" data-toggle="collapse" href="#more-names" aria-expanded="false" aria-controls="more-names" >rozšírené</a>'
+                            + '<a id="more-names-a" data-toggle="collapse" href="#more-names" aria-expanded="false" aria-controls="more-names" >všetky mená</a>'
                             + '<i class="far fa-caret-square-down"></i>'
                             + '</button>'
                             + '</span>'
