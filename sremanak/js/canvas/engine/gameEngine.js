@@ -45,16 +45,6 @@ class GameEngine {
         this._canvasSize = value;
     }
 
-    _puzzle;
-
-    get puzzle() {
-        return this._puzzle;
-    }
-
-    set puzzle(value) {
-        this._puzzle = value;
-    }
-
     _counter;
 
     get counter() {
@@ -109,34 +99,6 @@ class GameEngine {
         this.canvas.add(this.canvasLayer);
     }
 
-
-    createImage(imagePiece) {
-        const path = "../../app/assets/images/sremanak/";
-        let htmlImage = document.createElement("img");
-        htmlImage.setAttribute("id", imagePiece.id);
-        htmlImage.setAttribute("src", path + imagePiece.name + imagePiece.format);
-        htmlImage.setAttribute("alt", imagePiece.name + " htmlImageElement");
-        htmlImage.classList.add("piece-image");
-        return htmlImage;
-    }
-
-    imageStyle(piece) {
-        let image = gameEngine.createImage(piece.imagePiece);
-        return {image: image, shadowBlur: 10, shadowColor: "#FFC5C5"};
-
-    }
-
-    createImageActorFromPiece(piece) {
-        let image = new Konva.Image(this.imageStyle(piece));
-        let scaleWidth = piece.imagePiece.width * piece.width;
-        let scaleHeight = piece.imagePiece.height * piece.height;
-        image.x(piece.targetCoordinates.x);
-        image.y(piece.targetCoordinates.y);
-        image.width(scaleWidth);
-        image.height(scaleHeight);
-        return image;
-    }
-
     modalTextStyle() {
         return {
             fontSize: 24,
@@ -184,7 +146,7 @@ class GameEngine {
         return modal;
     }
 
-    createWindow(windowDimension, contentText) {
+    createModalWithText(windowDimension, contentText) {
         let text = this.createText(contentText, windowDimension);
         windowDimension.height = text.getHeight() + 40;
         let modal = this.createModal(windowDimension);
@@ -194,7 +156,7 @@ class GameEngine {
     }
 
 
-    removeWindow() {
+    removeModal() {
         let modal = this.canvas.find("#modal");
         let text = this.canvas.find("#text");
         modal.remove();
@@ -220,64 +182,6 @@ class GameEngine {
         timer.innerText = this.secondsToTime(this.counter);
     }
 
-    actorInTargetPlace(actor) {
-        actor.draggable(false);
-        actor.off('mouseover');
-        actor.shadowBlur(10);
-        actor.shadowColor("green");
-        actor.zIndex = 0;
-    }
-
-    pieceInTarget(piece, actor) {
-        piece.inTarget = true;
-        this.actorInTargetPlace(actor);
-        this.playTickSound();
-        document.body.style.cursor = 'default';
-        this.canvasLayer.draw();
-        actor.off('mouseout');
-        actor.x(piece.targetCoordinates.x);
-        actor.y(piece.targetCoordinates.y);
-
-    }
-
-    getToleranceFromDifficulty() {
-        let difficulty = document.getElementById("difficulty").value;
-        if (difficulty === "easy") {
-            return 16;
-        } else if (difficulty === "medium") {
-            return 9;
-        } else if (difficulty === "hard") {
-            return 2;
-        }
-    }
-
-    countCoordinatesForPointOfDirectionVector(directionVector, point) {
-        const x = directionVector.x / point;
-        const y = directionVector.y / point;
-        return new Coordinates(x, y);
-    }
-
-    createMoveAnimation(piece, targetCoordinates, animation) {
-        const actualCoordinates = new Coordinates(piece.actor.getX(), piece.actor.getY());
-        const directionVector = piece.directionVector(targetCoordinates, actualCoordinates);
-        const distance = piece.distance(directionVector);
-        const exactPoint = 10.00;
-        let velocity = 8.00;
-
-        if (piece.areActualCoordinatesInRange(actualCoordinates, targetCoordinates, exactPoint)) {
-            velocity = 1.00;
-        }
-        const point = distance / velocity;
-        let countedCoordinates = this.countCoordinatesForPointOfDirectionVector(directionVector, point);
-
-        if (piece.areActualCoordinatesInRange(actualCoordinates, targetCoordinates, 0)) {
-            animation.stop();
-            return;
-
-        }
-        piece.actor.move({x: (countedCoordinates.x), y: (countedCoordinates.y)});
-    }
-
     playDoneSound() {
         let doneSound = document.getElementById("done");
         doneSound.play();
@@ -288,17 +192,33 @@ class GameEngine {
         tickSound.play();
     }
 
-
-    gameDone() {
-        gameEngine.puzzle.colorize(gameEngine.canvasLayer);
-        let windowDimension = new Dimension(400, 200);
-        let gameDoneText = createGameDoneText();
-        gameEngine.createWindow(windowDimension, gameDoneText);
-        gameEngine.puzzle.turnOfListeners();
-        gameEngine.puzzle.removeTargets();
-        this.playDoneSound();
-        let startButton = document.getElementById("start");
-        setButtonTextAndSwitchRenderer(startButton, "Reset", false);
+    scaleCanvas(scaledCanvas, scale) {
+        gameEngine.canvas.width(scaledCanvas.width);
+        gameEngine.canvas.height(scaledCanvas.height);
+        gameEngine.canvas.scale({x: scale, y: scale});
+        gameEngine.canvas.batchDraw();
     }
+
+    isCanvasScaleInDefaultRange(scaledCanvas) {
+        return scaledCanvas.width > 1000 && scaledCanvas.height > 500;
+    }
+
+    getWidthOfParentContainerById(id) {
+        let container = document.getElementById(id);
+        return container.offsetWidth;
+    }
+
+    fitCanvasIntoParentContainer(containerWidth) {
+
+        let scale = containerWidth / gameEngine.canvasSize.width;
+        let scaledCanvas = new Dimension(gameEngine.canvasSize.width * scale, gameEngine.canvasSize.height * scale);
+
+        if (this.isCanvasScaleInDefaultRange(scaledCanvas)) {
+            scale = 1;
+            scaledCanvas.dimension(1000, 500);
+        }
+        this.scaleCanvas(scaledCanvas, scale);
+    }
+
 }
 

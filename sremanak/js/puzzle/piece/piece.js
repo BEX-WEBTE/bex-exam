@@ -117,4 +117,14 @@ class Piece {
         return Math.sqrt((directionVector.x * directionVector.x) + (directionVector.y * directionVector.y));
     }
 
+    createImage() {
+        const path = "../../app/assets/images/sremanak/";
+        let htmlImage = document.createElement("img");
+        htmlImage.setAttribute("id", this.imagePiece.id);
+        htmlImage.setAttribute("src", path + this.imagePiece.name + this.imagePiece.format);
+        htmlImage.setAttribute("alt", this.imagePiece.name + " htmlImageElement");
+        htmlImage.classList.add("piece-image");
+        return htmlImage;
+    }
+
 }
