@@ -192,33 +192,5 @@ class GameEngine {
         tickSound.play();
     }
 
-    scaleCanvas(scaledCanvas, scale) {
-        gameEngine.canvas.width(scaledCanvas.width);
-        gameEngine.canvas.height(scaledCanvas.height);
-        gameEngine.canvas.scale({x: scale, y: scale});
-        gameEngine.canvas.batchDraw();
-    }
-
-    isCanvasScaleInDefaultRange(scaledCanvas) {
-        return scaledCanvas.width > 1000 && scaledCanvas.height > 500;
-    }
-
-    getWidthOfParentContainerById(id) {
-        let container = document.getElementById(id);
-        return container.offsetWidth;
-    }
-
-    fitCanvasIntoParentContainer(containerWidth) {
-
-        let scale = containerWidth / gameEngine.canvasSize.width;
-        let scaledCanvas = new Dimension(gameEngine.canvasSize.width * scale, gameEngine.canvasSize.height * scale);
-
-        if (this.isCanvasScaleInDefaultRange(scaledCanvas)) {
-            scale = 1;
-            scaledCanvas.dimension(1000, 500);
-        }
-        this.scaleCanvas(scaledCanvas, scale);
-    }
-
 }
 

@@ -167,13 +167,38 @@ async function render() {
 
 }
 
+function scaleCanvas(scaledCanvas, scale) {
+    gameEngine.canvas.width(scaledCanvas.width);
+    gameEngine.canvas.height(scaledCanvas.height);
+    gameEngine.canvas.scale({x: scale, y: scale});
+    gameEngine.canvas.batchDraw();
+}
+
+function isCanvasScaleInDefaultRange(scaledCanvas) {
+    return scaledCanvas.width > 1000 && scaledCanvas.height > 500;
+}
+
+function getWidthOfParentContainerById(id) {
+    let container = document.getElementById(id);
+    return container.offsetWidth;
+}
+
+function fitCanvasIntoParentContainer() {
+    let containerWidth = getWidthOfParentContainerById("game-container");
+    let scale = containerWidth / gameEngine.canvasSize.width;
+    let scaledCanvas = new Dimension(gameEngine.canvasSize.width * scale, gameEngine.canvasSize.height * scale);
+
+    if (this.isCanvasScaleInDefaultRange(scaledCanvas)) {
+        scale = 1;
+        scaledCanvas.dimension(1000, 500);
+    }
+    this.scaleCanvas(scaledCanvas, scale);
+}
+
 function onLoad() {
     gameEngine.createCanvasAndLayer();
-    window.addEventListener('resize', () => {
-        let containerWidth = gameEngine.getWidthOfParentContainerById("game-container");
-        gameEngine.fitCanvasIntoParentContainer(containerWidth);
-    });
-    gameEngine.fitCanvasIntoParentContainer();
+    window.addEventListener('resize', fitCanvasIntoParentContainer);
+    fitCanvasIntoParentContainer();
     loadImagesFromJson();
 }
 
