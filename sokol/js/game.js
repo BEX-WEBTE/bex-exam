@@ -319,6 +319,7 @@ function allIncorrect()
 
 function turnOnDemo()
 {
+    turnOffTransitionOnImage();
     stopTime();
     resetTime();
     fromResetToStart();
