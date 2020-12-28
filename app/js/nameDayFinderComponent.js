@@ -98,7 +98,7 @@ class NameDayFinderComponent extends HTMLElement{
             showNameInput();
 
             const nameInput = document.getElementById("name-input");
-            nameInput.addEventListener("change", onChangeNameInput);
+            nameInput.addEventListener("input", onChangeNameInput);
         }
 
         function onChangeNameInput(){
