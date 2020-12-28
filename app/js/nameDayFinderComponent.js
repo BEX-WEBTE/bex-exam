@@ -46,7 +46,7 @@ class NameDayFinderComponent extends HTMLElement{
 
             showTodayDate();
 
-            dateInput.addEventListener("input", dateInputChanged);
+            dateInput.addEventListener("input", onDateInputChanged);
         }
 
         function showTodayDate(){
@@ -60,9 +60,7 @@ class NameDayFinderComponent extends HTMLElement{
             textToday.innerText = day + "." + month + ".";
         }
 
-        function dateInputChanged(){
-            const dateInput = document.getElementById("date-input");
-
+        function onDateInputChanged(){
             showNameInput();
             showHolidaysInput();
         }
@@ -70,8 +68,6 @@ class NameDayFinderComponent extends HTMLElement{
         function showNameInput(){
             const nameInput = document.getElementById("name-input");
             const moreNames = document.getElementById("more-names-under-input");
-            const moreNamesDiv = document.getElementById("more-names-under-input-div");
-
 
             let date = document.getElementById("date-input").value;
             date = getFormattedDate(date);
@@ -83,16 +79,8 @@ class NameDayFinderComponent extends HTMLElement{
             const names = getNames(date, activeCountry);
             const dividedNames = names.split(",");
 
-            if(dividedNames.length > 1){
-                nameInput.value = dividedNames[0]
-                moreNames.innerText = names;
-                moreNamesDiv.style.display = "unset";
-            }
-            else {
-                nameInput.value = names;
-                moreNames.innerText = names;
-                moreNamesDiv.style.display = "none";
-            }
+            nameInput.value = dividedNames[0]
+            moreNames.innerText = names;
         }
 
         function showHolidaysInput(){
@@ -108,7 +96,99 @@ class NameDayFinderComponent extends HTMLElement{
         function initNameInput(){
             showTextNames();
             showNameInput();
+
+            const nameInput = document.getElementById("name-input");
+            nameInput.addEventListener("change", onChangeNameInput);
         }
+
+        function onChangeNameInput(){
+            const name = document.getElementById("name-input").value;
+            let activeCountry = document.getElementsByClassName("active-country")[0].innerText;
+            const xml = getLoadedXml();
+            const allZaznam = xml.getElementsByTagName("zaznam");
+
+            if(activeCountry === "SK")
+                activeCountry = "SKd";
+
+            const zaznam = getZaznamFromName(allZaznam, name, activeCountry);
+            showDateFromZaznam(zaznam);
+            showMoreNamesFromZaznam(zaznam, activeCountry);
+
+            showHolidaysInput();
+        }
+
+        function showDateFromZaznam(zaznam){
+            let xmlDate;
+            if(zaznam === '<zaznam></zaznam>')
+                xmlDate = "";
+            else
+                xmlDate = zaznam.getElementsByTagName("den")[0].innerHTML;
+
+            const date = getUnformattedDate(xmlDate);
+
+            document.getElementById("date-input").value = date;
+        }
+
+        function showMoreNamesFromZaznam(zaznam, activeCountry){
+            const moreNames = document.getElementById("more-names-under-input");
+
+            let names = "";
+            if(zaznam === '<zaznam></zaznam>')
+                names = "";
+            else {
+                const namesElement = zaznam.getElementsByTagName(activeCountry)[0];
+
+                if (namesElement === undefined)
+                    names = "";
+                else
+                    names = namesElement.innerHTML;
+            }
+
+            moreNames.innerText = names;
+        }
+
+        function getZaznamFromName(allZaznam, searchedName, country){
+            if(searchedName === "")
+                return '<zaznam></zaznam>';
+
+            for (let zaznam of allZaznam) {
+                const names = zaznam.getElementsByTagName(country)[0];
+
+                if(!names)
+                    continue;
+
+                if(namesIncludesName(names.innerHTML, searchedName))
+                    return zaznam;
+            }
+
+            return '<zaznam></zaznam>';
+        }
+
+        function namesIncludesName(names, searchedName){
+            if(names === "")
+                return false;
+
+            names = names.replace(/[ ]+/g, '');
+            const splitNames = names.split(",");
+
+            for(let oneName of splitNames){
+                if(oneName === searchedName)
+                    return true;
+            }
+
+            return false;
+        }
+
+        function getUnformattedDate(formattedDate){
+            if(formattedDate === "")
+                return "";
+
+            const day = formattedDate.substring(2, 4);
+            const month = formattedDate.substring(0,2);
+
+            return "2020-" + month + "-" + day;
+        }
+
 
         function showTextNames(){
             const textName = document.getElementById("text-name");
@@ -155,7 +235,7 @@ class NameDayFinderComponent extends HTMLElement{
         function getNames(date, country){
             const xml = getLoadedXml();
             const allZaznam = xml.getElementsByTagName("zaznam");
-            const zaznam = getZaznam(allZaznam, date);
+            const zaznam = getZaznamFromDate(allZaznam, date);
 
             if(zaznam === '<zaznam></zaznam>')
                 return "-";
@@ -184,7 +264,7 @@ class NameDayFinderComponent extends HTMLElement{
             return  xmlhttp.responseXML;
         }
 
-        function getZaznam(allZaznam, date) {
+        function getZaznamFromDate(allZaznam, date) {
             for (let zaznam of allZaznam) {
                 const den = zaznam.getElementsByTagName("den")[0];
                 if (den.innerHTML === date)
@@ -217,7 +297,7 @@ class NameDayFinderComponent extends HTMLElement{
         function getHolidays(date, country){
             const xml = getLoadedXml();
             const allZaznam = xml.getElementsByTagName("zaznam");
-            const zaznam = getZaznam(allZaznam, date);
+            const zaznam = getZaznamFromDate(allZaznam, date);
 
             if(zaznam === '<zaznam></zaznam>')
                 return "-";
