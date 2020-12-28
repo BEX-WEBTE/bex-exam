@@ -171,7 +171,12 @@ class NameDayFinderComponent extends HTMLElement{
             names = names.replace(/[ ]+/g, '');
             const splitNames = names.split(",");
 
+            searchedName = searchedName.toLowerCase();
+            searchedName = searchedName.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+
             for(let oneName of splitNames){
+                oneName = oneName.toLowerCase()
+                oneName = oneName.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
                 if(oneName === searchedName)
                     return true;
             }
