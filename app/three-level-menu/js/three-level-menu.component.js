@@ -4,6 +4,7 @@ class ThreeLevelMenuComponent extends HTMLElement {
         super();
         this.dom = this.attachShadow({mode: 'open'});
         this.loadHtml();
+
     }
 
     loadHtml() {
@@ -13,6 +14,8 @@ class ThreeLevelMenuComponent extends HTMLElement {
                 this.dom.innerHTML = text;
             });
     }
+
+
 
     getElementById(id) {
         return this.dom.querySelector('#' + id);
