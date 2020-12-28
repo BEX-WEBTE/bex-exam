@@ -188,11 +188,11 @@ function fitCanvasIntoParentContainer() {
     let scale = containerWidth / gameEngine.canvasSize.width;
     let scaledCanvas = new Dimension(gameEngine.canvasSize.width * scale, gameEngine.canvasSize.height * scale);
 
-    if (this.isCanvasScaleInDefaultRange(scaledCanvas)) {
+    if (isCanvasScaleInDefaultRange(scaledCanvas)) {
         scale = 1;
         scaledCanvas.dimension(1000, 500);
     }
-    this.scaleCanvas(scaledCanvas, scale);
+    scaleCanvas(scaledCanvas, scale);
 }
 
 function onLoad() {
