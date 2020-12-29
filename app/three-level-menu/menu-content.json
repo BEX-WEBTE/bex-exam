@@ -8,7 +8,7 @@
     {
       "id": "aboutUs",
       "title": "O nás",
-      "path": "",
+      "path": "#",
       "child": [
         {
           "id": "sremanak",
@@ -35,32 +35,32 @@
     {
       "id": "games",
       "title": "Hry",
-      "path": "",
+      "path": "#",
       "child": [
         {
           "id": "puzzle",
           "title": "Puzzle",
-          "path": "",
+          "path": "#",
           "child": [
             {
               "id": "sremanakHra",
               "title": "Vzajati slameniaka",
-              "path": ""
+              "path": "./sremanak/html/game.html"
             },
             {
               "id": "peluhaHra",
               "title": "Pehuliacik a 4 zlobri",
-              "path": ""
+              "path": "./peluha/html/game.html"
             },
             {
               "id": "palencarHra",
               "title": "Nezvestný v svete ježišovom",
-              "path": ""
+              "path": "./palencar/html/game.html"
             },
             {
               "id": "sokolHra",
               "title": "Richlo a zbesylo IE edícia",
-              "path": ""
+              "path": "./sokol/html/game.html"
             }
           ]
         }
@@ -69,12 +69,12 @@
     {
       "id": "school",
       "title": "Škola",
-      "path": "",
+      "path": "#",
       "child": [
         {
           "id": "feiSti",
           "title": "FEI STU",
-          "path": ""
+          "path": "https://www.fei.stuba.sk/"
         }
       ]
     }
