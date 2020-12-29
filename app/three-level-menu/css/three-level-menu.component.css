@@ -1,0 +1,42 @@
+#menu > .item > .navigation-bar-inner-row {
+
+}
+
+.item {
+    position: relative;
+    display: inline-block;
+}
+
+.item:hover > .navigation-bar-inner-row {
+    display: block;
+}
+
+.navigation-bar-inner-row {
+
+    display: none;
+    position: absolute;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 1;
+    width: 100px;
+    border-bottom: 3px solid black;
+    text-align: center;
+    transform: translatex(-50%);
+    left: 50%;
+}
+
+.navigation-bar-inner-row .item {
+    font-size: 0.8em;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.navigation-bar-inner-row .item-link:hover {
+    background-color: red;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
