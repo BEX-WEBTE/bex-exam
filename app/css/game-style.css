@@ -8,7 +8,8 @@
 .game-container-info {
     border-radius: 15px;
     padding: 20px;
-    width: fit-content;
+    width: -moz-fit-content; /* Firefox*/
+    width: fit-content; /* Chrome */
     text-align: left;
     margin-top: -70px;
     margin-bottom: 10px;
