@@ -12,5 +12,6 @@
 
 .game-container-settings-difficulty {
     display: inline-flex;
+    display: -moz-inline-box;
     transition: letter-spacing 1s;
 }
