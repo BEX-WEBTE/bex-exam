@@ -3,10 +3,12 @@ class AttendanceCounterComponent extends HTMLElement{
         const numberOfVisits = handleAttendanceCookies();
 
         this.innerHTML = ''
-            + '<span class=" thumbnail-container-event-title">'
-            + 'Stránky tohto webu si za posledný <span class="bold-max">mesiac </span>navštívil: '
+            + '<div class=" thumbnail-container-event-title">'
+            + 'Stránky tohto webu si za posledný <span class="bold-max">mesiac </span>navštívil '
+            + '<span id="attendace-number">'
             + numberOfVisits
-            +'krát</span> ';
+            + '</span>'
+            +'krát</div> ';
     }
 }
 
