@@ -1,0 +1,84 @@
+{
+  "menuContent": [
+    {
+      "id": "home",
+      "title": "Domov",
+      "path": ""
+    },
+    {
+      "id": "aboutUs",
+      "title": "O nás",
+      "path": "",
+      "child": [
+        {
+          "id": "sremanak",
+          "title": "Sremaňák",
+          "path": ""
+        },
+        {
+          "id": "peluha",
+          "title": "Peluha",
+          "path": ""
+        },
+        {
+          "id": "palencar",
+          "title": "Palenčár",
+          "path": ""
+        },
+        {
+          "id": "sokol",
+          "title": "Sokol",
+          "path": ""
+        }
+      ]
+    },
+    {
+      "id": "games",
+      "title": "Hry",
+      "path": "",
+      "child": [
+        {
+          "id": "puzzle",
+          "title": "Puzzle",
+          "path": "",
+          "child": [
+            {
+              "id": "sremanakHra",
+              "title": "Vzajati slameniaka",
+              "path": ""
+            },
+            {
+              "id": "peluhaHra",
+              "title": "Pehuliacik a 4 zlobri",
+              "path": ""
+            },
+            {
+              "id": "palencarHra",
+              "title": "Nezvestný v svete ježišovom",
+              "path": ""
+            },
+            {
+              "id": "sokolHra",
+              "title": "Richlo a zbesylo IE edícia",
+              "path": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "school",
+      "title": "Škola",
+      "path": "",
+      "child": [
+        {
+          "id": "feiSti",
+          "title": "FEI STU",
+          "path": ""
+        }
+      ]
+    }
+  ]
+}
+
+
