@@ -17,7 +17,7 @@ class NameDayFinderComponent extends HTMLElement{
 
 
         this.innerHTML += '<div class="nameday-input-div"><label for="date-input">Dňa  </label>'
-                            + '<input class="nameday-input" type="date" id="date-input" name="date-input" onfocus="blur()" onkeydown="return false;"></div>';
+                            + '<input class="nameday-input" type="date" id="date-input" name="date-input""></div>';
 
         this.innerHTML += '<div class="nameday-input-div"><label for="holiday-input">Sviatok  </label>'
             + '<input class="nameday-input" type="text" id="holiday-input" name="holiday-input" disabled></div>';
@@ -47,7 +47,6 @@ class NameDayFinderComponent extends HTMLElement{
             showTodayDate();
 
             dateInput.addEventListener("input", onChangeDateInput);
-            dateInput.addEventListener("input", validateDate);
         }
 
         function showTodayDate(){
@@ -95,22 +94,6 @@ class NameDayFinderComponent extends HTMLElement{
             holidaysInput.value = holidays;
         }
 
-        function validateDate(){
-            const dateInput = document.getElementById("date-input");
-            const date = dateInput.value;
-            const splitDate = date.split("-");
-
-            const day = splitDate[2];
-            const month = splitDate[1];
-            const year = splitDate[0];
-
-            if((month === "04" || month === "06" || month === "09" || month === "11") &&
-                day === "31"){
-
-                dateInput.value = year + "-" + month + "-30";
-            }
-
-        }
 
         function initNameInput(){
             showTextNames();
