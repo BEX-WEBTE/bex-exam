@@ -2,12 +2,9 @@ let gameEngine = new GameEngine();
 let puzzle = new Puzzle();
 
 
-function loadImagesFromJson() {
-    fetch('../js/images.json')
-        .then(response => response.json())
-        .then(json => {
-            puzzle.createPiecesFromImagesAndDrawToCanvas(json.images);
-        });
+async function loadImagesFromJson() {
+    const response = await fetch('../js/images.json');
+    return await response.json();
 }
 
 function setButtonTextAndSwitchRenderer(button, text, rendererState) {
@@ -199,6 +196,9 @@ function onLoad() {
     gameEngine.createCanvasAndLayer();
     window.addEventListener('resize', fitCanvasIntoParentContainer);
     fitCanvasIntoParentContainer();
-    loadImagesFromJson();
+    loadImagesFromJson().then(json => {
+        puzzle.createPiecesFromImagesAndDrawToCanvas(json.images);
+    });
+
 }
 
