@@ -12,17 +12,20 @@ class ThreeLevelMenuComponent extends HTMLElement {
             "child": [],
         }
         this.dom = this.attachShadow({mode: 'open'});
-        this.loadHtml();
-        this.loadMenuContent();
+        this.loadHtml().then(text => {
+            this.dom.innerHTML = text;
+            this.loadMenuContent().then(json => {
+                this.menuContent = json.menuContent;
+                this.crateListFromMenuContent();
+            });
+        });
+
 
     }
 
-    loadHtml() {
-        fetch("app/three-level-menu/three-level-menu.component.html")
-            .then(response => response.text())
-            .then(text => {
-                this.dom.innerHTML = text;
-            });
+    async loadHtml() {
+        const response = await fetch("app/three-level-menu/three-level-menu.component.html")
+        return await response.text();
     }
 
     getElementById(id) {
@@ -30,13 +33,9 @@ class ThreeLevelMenuComponent extends HTMLElement {
 
     }
 
-    loadMenuContent() {
-        fetch("app/three-level-menu/menu-content.json")
-            .then(response => response.json())
-            .then(json => {
-                this.menuContent = json.menuContent;
-                this.crateListFromMenuContent();
-            });
+    async loadMenuContent() {
+        const response = await fetch("app/three-level-menu/menu-content.json");
+        return await response.json();
     }
 
     createHtmlList() {
