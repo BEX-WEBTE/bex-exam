@@ -26,24 +26,22 @@
 }
 
 .item {
-    font-size: larger;
+    font-size: 20px;
     display: inline;
     margin-right: 15px;
     margin-left: 15px;
-    white-space: nowrap;
     color: #030000;
 }
 
 .item-active {
     font-weight: 900;
     color: black;
-
 }
 
-.item:hover:not(.item-active) {
+.item-link:hover:not(.item-active) {
     color: black;
     font-weight: 900;
-
+    cursor: pointer;
 }
 
 
