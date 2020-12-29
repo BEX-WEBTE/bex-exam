@@ -3,6 +3,7 @@ class ThreeLevelMenuComponent extends HTMLElement {
 
     menuContent;
 
+
     constructor() {
         super();
         this.menuContent = {
@@ -16,6 +17,7 @@ class ThreeLevelMenuComponent extends HTMLElement {
             this.dom.innerHTML = text;
             this.loadMenuContent().then(json => {
                 this.menuContent = json.menuContent;
+                this.loadCss()
                 this.crateListFromMenuContent();
             });
         });
@@ -23,8 +25,17 @@ class ThreeLevelMenuComponent extends HTMLElement {
 
     }
 
+    getWebPrefix(prefixLength) {
+        let pathPrefix = "";
+        let pathNameArray = window.location.pathname.split("/");
+        for (let i = 0; i <= prefixLength; i++) {
+            pathPrefix += pathNameArray[i] + "/";
+        }
+        return pathPrefix;
+    }
+
     async loadHtml() {
-        const response = await fetch("app/three-level-menu/three-level-menu.component.html")
+        const response = await fetch(this.getWebPrefix(2) + "app/three-level-menu/three-level-menu.component.html")
         return await response.text();
     }
 
@@ -33,10 +44,24 @@ class ThreeLevelMenuComponent extends HTMLElement {
 
     }
 
+    createCssLink(path) {
+        let link = document.createElement("link");
+        link.setAttribute("href", this.getWebPrefix(2) + path);
+        link.setAttribute("rel", "stylesheet");
+        this.dom.appendChild(link);
+    }
+
+    loadCss() {
+        this.createCssLink("app/css/header.css");
+        this.createCssLink("app/three-level-menu/css/three-level-menu.component.css");
+        this.createCssLink("style.css");
+    }
+
     async loadMenuContent() {
-        const response = await fetch("app/three-level-menu/menu-content.json");
+        const response = await fetch(this.getWebPrefix(2) + "app/three-level-menu/menu-content.json");
         return await response.json();
     }
+
 
     createHtmlList() {
         let list = document.createElement("ul");
@@ -62,7 +87,8 @@ class ThreeLevelMenuComponent extends HTMLElement {
     }
 
     setAttributeAndTextOfLinkFromItem(link, item) {
-        link.setAttribute("href", item.path)
+
+        link.setAttribute("href", this.getWebPrefix(2) + item.path)
         link.innerText = item.title;
     }
 
@@ -95,6 +121,7 @@ class ThreeLevelMenuComponent extends HTMLElement {
         }
 
     }
-
-
 }
+
+customElements.define('three-level-menu', ThreeLevelMenuComponent);
+console.log(window.location.pathname)

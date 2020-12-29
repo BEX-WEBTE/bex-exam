@@ -3,7 +3,7 @@
     {
       "id": "home",
       "title": "Domov",
-      "path": ""
+      "path": "index.html"
     },
     {
       "id": "aboutUs",
@@ -45,22 +45,22 @@
             {
               "id": "sremanakHra",
               "title": "Vzajati slameniaka",
-              "path": "./sremanak/html/game.html"
+              "path": "sremanak/html/game.html"
             },
             {
               "id": "peluhaHra",
               "title": "Pehuliacik a 4 zlobri",
-              "path": "./peluha/html/game.html"
+              "path": "peluha/html/game.html"
             },
             {
               "id": "palencarHra",
               "title": "Nezvestný v svete ježišovom",
-              "path": "./palencar/html/game.html"
+              "path": "palencar/html/game.html"
             },
             {
               "id": "sokolHra",
               "title": "Richlo a zbesylo IE edícia",
-              "path": "./sokol/html/game.html"
+              "path": "sokol/html/game.html"
             }
           ]
         }
@@ -74,7 +74,7 @@
         {
           "id": "feiSti",
           "title": "FEI STU",
-          "path": "https://www.fei.stuba.sk/"
+          "path": ""
         }
       ]
     }
