@@ -4,7 +4,7 @@
     margin-right: auto;
     margin-bottom: 50px;
     font-size: larger;
-    min-width: 250px;
+    min-width: 300px;
     border-collapse:separate;
     border: 3px solid black;
     overflow: hidden;
@@ -64,4 +64,9 @@
 .icon-size{
     width: 30px;
     height: 30px;
+}
+
+.a-link-color{
+    text-decoration: none;
+    color: black;
 }
