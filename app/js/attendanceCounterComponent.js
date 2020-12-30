@@ -5,7 +5,7 @@ class AttendanceCounterComponent extends HTMLElement{
         this.innerHTML = ''
             + '<div class=" thumbnail-container-event-title">'
             + 'Stránky tohto webu si za posledný <span class="bold-max">mesiac </span>navštívil '
-            + '<span id="attendace-number">'
+            + '<br><span id="attendace-number">'
             + numberOfVisits
             + '</span>'
             +'krát</div> ';
