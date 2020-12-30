@@ -2,16 +2,17 @@
 <html lang="sk">
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>Hra</title>
+    <meta content="width=device-width, height=device-height, initial-scale=1" name="viewport">
+    <title>My little pony</title>
     <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
     <link href="../../style.css" rel="stylesheet">
     <link href="../../app/css/header.css" rel="stylesheet">
     <link href="../../app/css/game-style.css" rel="stylesheet">
     <link href="../css/game.css" rel="stylesheet">
-    <script src="../js/game.js"></script>
+    <link href="../css/modal.css" rel="stylesheet">
 
+    <script src="../js/game.js"></script>
 
 </head>
 <body>
@@ -25,26 +26,87 @@
 </nav>
 
 
-<section class="game-container">
+<section id="game-container-id" class="game-container">
     <div class="game-container-info bomb-background">
-        <h1 class="game-container-info-title bold-max">Názov hry</h1>
+        <h1 class="game-container-info-title bold-max">My little pony</h1>
         <h2 class="game-container-info-name">Matej<span class="bold-max"> Peluha</span></h2>
     </div>
 
+    <span class="modal-content" id="wait-for-demo">Počkaj kým sa dokončí demo!</span>
+
     <div class="game-container-settings">
         <button class="game-container-settings-button" id="start">Štart</button>
-        <button class="game-container-settings-button" id="reset">Reset</button>
         <button class="game-container-settings-button" id="demo">Demo</button>
-        <span class="" id="time">00:00</span>
+        <span class="" id="time">00:00:00</span>
     </div>
 
 
-    <canvas class="game-container-canvas" height="500" id="game-canvas" width="1000">
-        <img alt="Game picture" height="500" id="game-image"
-             src="../../app/assets/images/1000x500.png"
-             width="1000">
-    </canvas>
+
+    <div class="game-container-canvas" id="game-canvas" >
+        <h2 id="game-text">Sem poskladaj obrázky</h2>
+        <img alt="Game picture" id="game-image" src="../../app/assets/images/matejpeluha/my_little_pony.jpg" draggable="false">
+
+        <div id="pony08-container" class="pony-container"
+             ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img id="pony08" class="pony" src="../../app/assets/images/matejpeluha/pony08.png"
+                 alt="pony08" draggable="false" ondragstart="drag(event)" >
+        </div>
+        <div id="pony09-container" class="pony-container"
+             ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img id="pony09" class="pony" src="../../app/assets/images/matejpeluha/pony09.png"
+                 alt="pony09" draggable="false" ondragstart="drag(event)" >
+        </div>
+        <div id="pony07-container" class="pony-container"
+             ondrop="drop(event)" ondragover="allowDrop(event)" >
+            <img id="pony07" class="pony" src="../../app/assets/images/matejpeluha/pony07.png"
+                 alt="pony07" draggable="false" ondragstart="drag(event)" >
+        </div>
+        <div id="pony06-container" class="pony-container"
+             ondrop="drop(event)" ondragover="allowDrop(event)" >
+            <img id="pony06" class="pony" src="../../app/assets/images/matejpeluha/pony06.png"
+                 alt="pony06" draggable="false" ondragstart="drag(event)" >
+        </div>
+        <div id="pony05-container" class="pony-container"
+             ondrop="drop(event)" ondragover="allowDrop(event)" >
+            <img id="pony05" class="pony" src="../../app/assets/images/matejpeluha/pony05.png"
+                 alt="pony05" draggable="false" ondragstart="drag(event)" >
+        </div>
+        <div id="pony04-container" class="pony-container"
+             ondrop="drop(event)" ondragover="allowDrop(event)" >
+            <img id="pony04" class="pony" src="../../app/assets/images/matejpeluha/pony04.png"
+                 alt="pony04" draggable="false" ondragstart="drag(event)" >
+        </div>
+        <div id="pony03-container" class="pony-container"
+             ondrop="drop(event)" ondragover="allowDrop(event)" >
+            <img id="pony03" class="pony" src="../../app/assets/images/matejpeluha/pony03.png"
+                 alt="pony03" draggable="false" ondragstart="drag(event)" >
+        </div>
+        <div id="pony02-container" class="pony-container"
+             ondrop="drop(event)" ondragover="allowDrop(event)" >
+            <img id="pony02" class="pony" src="../../app/assets/images/matejpeluha/pony02.png"
+                 alt="pony02" draggable="false" ondragstart="drag(event)" >
+        </div>
+        <div id="pony01-container" class="pony-container"
+             ondrop="drop(event)" ondragover="allowDrop(event)" >
+            <img id="pony01" class="pony" src="../../app/assets/images/matejpeluha/pony01.png"
+                 alt="pony01" draggable="false" ondragstart="drag(event)" >
+        </div>
+    </div>
+
+    <div id="pony08-out-container" class="pony-out-container"></div>
+    <div id="pony09-out-container" class="pony-out-container"></div>
+    <div id="allPony-out-container" class="pony-out-container"></div>
+
 </section>
+
+<div id="win-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Gratulujem ! Vyhral si !</p>
+        <p id="show-time">Čas:</p>
+    </div>
+</div>
+
 </body>
 </html>
 
