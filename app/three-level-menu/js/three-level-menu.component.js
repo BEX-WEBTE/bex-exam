@@ -17,12 +17,10 @@ class ThreeLevelMenuComponent extends HTMLElement {
             this.dom.innerHTML = text;
             this.loadMenuContent().then(json => {
                 this.menuContent = json.menuContent;
-                this.loadCss()
-                this.crateListFromMenuContent();
+                this.loadCss();
+                this.createListFromMenuContent();
             });
         });
-
-
     }
 
     getWebPrefix(prefixLength) {
@@ -93,14 +91,14 @@ class ThreeLevelMenuComponent extends HTMLElement {
         link.innerText = item.title;
     }
 
-    crateListFromMenuContent() {
+    createListFromMenuContent() {
         let list = this.getElementById("menu");
         this.menuContent.forEach((item) => {
             this.createList(list, item);
         });
     }
 
-    searchInChildrenAndCreateListForGrandChildren(item, listItem) {
+    searchInChildrenAndCreateListForGrandChild(item, listItem) {
         let newList = this.createHtmlList();
         item.child.forEach((child) => {
             listItem.appendChild(newList);
@@ -118,11 +116,11 @@ class ThreeLevelMenuComponent extends HTMLElement {
         list.appendChild(listItem);
 
         if (item.child) {
-            this.searchInChildrenAndCreateListForGrandChildren(item, listItem);
+            this.searchInChildrenAndCreateListForGrandChild(item, listItem);
         }
 
     }
 }
 
 customElements.define('three-level-menu', ThreeLevelMenuComponent);
-console.log(window.location.pathname)
+
