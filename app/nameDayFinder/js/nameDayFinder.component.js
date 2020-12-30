@@ -348,10 +348,13 @@ class NameDayFinderComponent extends HTMLElement {
         }
 
 
-        initDateInput();
-        initNameInput();
-        initHolidayInput();
-        initCountryChooser();
+        window.addEventListener('DOMContentLoaded', (event) => {
+            initDateInput();
+            initNameInput();
+            initHolidayInput();
+            initCountryChooser();
+        });
+
     }
 }
 
