@@ -7,7 +7,7 @@ if (window.Event) {
 
 function getCursorXY(e) {
     mouseX = e.clientX;
-    mouseY  = e.clientY;
+    mouseY = e.clientY;
 }
 
 function allowDrop(ev) {
@@ -36,28 +36,28 @@ function drop(ev) {
 
     getCursorXY(ev);
 
-    if(isDroppable(draggedImage, dropContainer))
+    if (isDroppable(draggedImage, dropContainer))
         finishDrop(draggedImage, dropContainer);
 
 
     dropContainer.style.zIndex = "0";
 }
 
-function isDroppable(draggedImage, dropContainer){
+function isDroppable(draggedImage, dropContainer) {
     const expectedContainerId = draggedImage.id + "-container";
 
-    if(expectedContainerId !== dropContainer.id)
+    if (expectedContainerId !== dropContainer.id)
         return false;
 
     const bounds = dropContainer.getBoundingClientRect();
-    const upBound = bounds.top ;
-    const downBound = bounds.bottom ;
-    const leftBound = bounds.left ;
+    const upBound = bounds.top;
+    const downBound = bounds.bottom;
+    const leftBound = bounds.left;
     const rightBound = bounds.right;
 
-    if(mouseY < upBound || mouseY > downBound)
+    if (mouseY < upBound || mouseY > downBound)
         return false;
-    else if(mouseX < leftBound || mouseX > rightBound)
+    else if (mouseX < leftBound || mouseX > rightBound)
         return false;
 
     return true;
@@ -65,18 +65,18 @@ function isDroppable(draggedImage, dropContainer){
 
 let numberOfDropped = 0;
 
-function finishDrop(draggedImage, dropContainer){
+function finishDrop(draggedImage, dropContainer) {
     dropContainer.appendChild(draggedImage);
     draggedImage.draggable = false;
     draggedImage.classList.remove("pony-grab-cursor");
 
     numberOfDropped++;
 
-    if(numberOfDropped === 9)
+    if (numberOfDropped === 9)
         finishGame();
 }
 
-function finishGame(){
+function finishGame() {
     stopStopWatch();
 
     const showTime = document.getElementById("show-time")
@@ -87,7 +87,7 @@ function finishGame(){
 }
 
 
-function moveAllImagesOutside(){
+function moveAllImagesOutside() {
     moveImageOutside("pony01");
     moveImageOutside("pony02");
     moveImageOutside("pony03");
@@ -99,7 +99,7 @@ function moveAllImagesOutside(){
     moveImageOutside("pony09");
 }
 
-function moveImageOutside(id){
+function moveImageOutside(id) {
     const pony = document.getElementById(id);
     pony.draggable = true;
     pony.classList.add("pony-grab-cursor");
@@ -107,19 +107,19 @@ function moveImageOutside(id){
 
     let ponyOutsideContainer;
 
-     if(id === "pony09" || id === "pony08")
-         ponyOutsideContainer = document.getElementById(id + "-out-container");
-     else if(id === "pony07" || id === "pony06" || id === "pony05" || id === "pony04"
-         || id === "pony03" || id === "pony02" || id === "pony01")
-         ponyOutsideContainer = document.getElementById("allPony-out-container");
+    if (id === "pony09" || id === "pony08")
+        ponyOutsideContainer = document.getElementById(id + "-out-container");
+    else if (id === "pony07" || id === "pony06" || id === "pony05" || id === "pony04"
+        || id === "pony03" || id === "pony02" || id === "pony01")
+        ponyOutsideContainer = document.getElementById("allPony-out-container");
 
-     ponyOutsideContainer.appendChild(pony);
+    ponyOutsideContainer.appendChild(pony);
 
 
 }
 
 
-function moveAllImagesInside(){
+function moveAllImagesInside() {
     moveImageInside("pony01");
     moveImageInside("pony02");
     moveImageInside("pony03");
@@ -131,7 +131,7 @@ function moveAllImagesInside(){
     moveImageInside("pony09");
 }
 
-function moveImageInside(id){
+function moveImageInside(id) {
     const pony = document.getElementById(id);
     pony.draggable = false;
     pony.classList.remove("pony-grab-cursor");
@@ -140,7 +140,6 @@ function moveImageInside(id){
     let ponyOutsideContainer = document.getElementById(id + "-container");
     ponyOutsideContainer.appendChild(pony);
 }
-
 
 
 let startTime;
@@ -167,7 +166,7 @@ function timeToString(time) {
     return `${formattedMM}:${formattedSS}:${formattedMS}`;
 }
 
-function resetStopWatch(){
+function resetStopWatch() {
     clearInterval(timerInterval);
     document.getElementById("time").innerHTML = "00:00:00";
     elapsedTime = 0;
@@ -183,11 +182,11 @@ function startStopWatch() {
 }
 
 
-function initStartButton(){
+function initStartButton() {
     const startButton = document.getElementById("start");
 
-    startButton.addEventListener("click", function (){
-        if(isDemoRunning) {
+    startButton.addEventListener("click", function () {
+        if (isDemoRunning) {
             showDemoWarning();
             return;
         }
@@ -200,8 +199,8 @@ function initStartButton(){
     })
 }
 
-function stopStopWatch(){
-    if(isDemoRunning) {
+function stopStopWatch() {
+    if (isDemoRunning) {
         showDemoWarning();
         return;
     }
@@ -230,7 +229,7 @@ function initModal() {
 }
 
 
-function initDemoButton(){
+function initDemoButton() {
     const demoButton = document.getElementById("demo");
 
     demoButton.addEventListener("click", showDemo);
@@ -238,8 +237,8 @@ function initDemoButton(){
 
 let isDemoRunning = false;
 
-function showDemo(){
-    if(isDemoRunning) {
+function showDemo() {
+    if (isDemoRunning) {
         showDemoWarning();
         return;
     }
@@ -256,18 +255,18 @@ function showDemo(){
     animateAllImagesInside();
 }
 
-function showDemoWarning(){
+function showDemoWarning() {
     const waitHeader = document.getElementById("wait-for-demo");
 
     waitHeader.style.opacity = "1";
-    setTimeout(function (){
+    setTimeout(function () {
         waitHeader.style.opacity = "0";
 
     }, 2000)
 
 }
 
-function setAllImagesDraggableFalse(){
+function setAllImagesDraggableFalse() {
     document.getElementById("pony09").draggable = false;
     document.getElementById("pony09").classList.remove("pony-grab-cursor");
     document.getElementById("pony08").draggable = false;
@@ -288,48 +287,48 @@ function setAllImagesDraggableFalse(){
     document.getElementById("pony01").classList.remove("pony-grab-cursor");
 }
 
-function animateAllImagesInside(){
+function animateAllImagesInside() {
     animateImageInside("pony09");
 
-    setTimeout(function (){
+    setTimeout(function () {
         normalizeAfterAnimation("pony09");
         animateImageInside("pony08");
     }, 2000);
-    setTimeout(function (){
+    setTimeout(function () {
         normalizeAfterAnimation("pony08");
         animateImageInside("pony07");
     }, 4000);
-    setTimeout(function (){
+    setTimeout(function () {
         normalizeAfterAnimation("pony07");
         animateImageInside("pony06");
     }, 6000);
-    setTimeout(function (){
+    setTimeout(function () {
         normalizeAfterAnimation("pony06");
         animateImageInside("pony05");
     }, 8000);
-    setTimeout(function (){
+    setTimeout(function () {
         normalizeAfterAnimation("pony05");
         animateImageInside("pony04");
     }, 10000);
-    setTimeout(function (){
+    setTimeout(function () {
         normalizeAfterAnimation("pony04");
         animateImageInside("pony03");
     }, 12000);
-    setTimeout(function (){
+    setTimeout(function () {
         normalizeAfterAnimation("pony03");
         animateImageInside("pony02");
     }, 14000);
-    setTimeout(function (){
+    setTimeout(function () {
         normalizeAfterAnimation("pony02");
         animateImageInside("pony01");
     }, 16000);
-    setTimeout(function (){
+    setTimeout(function () {
         normalizeAfterAnimation("pony01");
         isDemoRunning = false;
     }, 18000);
 }
 
-function animateImageInside(id){
+function animateImageInside(id) {
     const pony = document.getElementById(id);
     pony.draggable = false;
 
@@ -346,12 +345,12 @@ function animateImageInside(id){
     const ponyContainer = document.getElementById(id + "-container");
     const ponyContainerSize = ponyContainer.getBoundingClientRect();
 
-    pony.style.left = ponyContainerSize.left  + window.scrollX + "px";
-    pony.style.top = ponyContainerSize.top  + window.scrollY + "px";
+    pony.style.left = ponyContainerSize.left + window.scrollX + "px";
+    pony.style.top = ponyContainerSize.top + window.scrollY + "px";
 
 }
 
-function normalizeAfterAnimation(id){
+function normalizeAfterAnimation(id) {
     const pony = document.getElementById(id);
     const ponyContainer = document.getElementById(id + "-container");
     ponyContainer.appendChild(pony);

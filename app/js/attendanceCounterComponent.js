@@ -1,5 +1,5 @@
-class AttendanceCounterComponent extends HTMLElement{
-    connectedCallback(){
+class AttendanceCounterComponent extends HTMLElement {
+    connectedCallback() {
         const numberOfVisits = handleAttendanceCookies();
 
         this.innerHTML = ''
@@ -8,11 +8,11 @@ class AttendanceCounterComponent extends HTMLElement{
             + '<span id="attendace-number">'
             + numberOfVisits
             + '</span>'
-            +'krát</div> ';
+            + 'krát</div> ';
     }
 }
 
 
-if(!customElements.get('attendance-counter')) {
+if (!customElements.get('attendance-counter')) {
     customElements.define('attendance-counter', AttendanceCounterComponent);
 }

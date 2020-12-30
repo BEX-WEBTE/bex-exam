@@ -1,15 +1,15 @@
 function setCookie(cname, cvalue, exdays) {
     const date = new Date();
-    date.setTime(date.getTime() + (exdays*24*60*60*1000));
-    const expires = "expires="+ date.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/" ;
+    date.setTime(date.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
 function getCookie(cname) {
     const name = cname + "=";
     const decodedCookie = decodeURIComponent(document.cookie);
     const ca = decodedCookie.split(';');
-    for(let i = 0; i <ca.length; i++) {
+    for (let i = 0; i < ca.length; i++) {
         let c = ca[i];
         while (c.charAt(0) === ' ') {
             c = c.substring(1);
@@ -21,10 +21,10 @@ function getCookie(cname) {
     return "";
 }
 
-function handleAttendanceCookies(path){
+function handleAttendanceCookies(path) {
     let numberOfVisits = 1;
     const cookiesNumberOfVisits = getCookie("numberOfVisits");
-    if(cookiesNumberOfVisits) {
+    if (cookiesNumberOfVisits) {
         numberOfVisits = parseInt(cookiesNumberOfVisits, 10) + 1;
     }
     console.log(numberOfVisits);
