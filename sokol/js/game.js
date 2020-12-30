@@ -4,25 +4,25 @@ let minute = 0;
 let second = 0;
 let stopWatch;
 
-$( function() {
-    $( "#game-drop-left-background" ).droppable({
+$(function () {
+    $("#game-drop-left-background").droppable({
         accept: "#game-image-left-background",
         tolerance: "pointer",
-        drop: function( event, ui ) {
+        drop: function (event, ui) {
             ui.draggable.position({
                 of: $(this),
                 my: 'left top',
                 at: 'left top',
             });
-           correct["game-image-left-background"] = 1;
-           endGame();
+            correct["game-image-left-background"] = 1;
+            endGame();
         }
     });
 
-    $( "#game-drop-banana" ).droppable({
+    $("#game-drop-banana").droppable({
         accept: "#game-image-banana",
         tolerance: "pointer",
-        drop: function( event, ui ) {
+        drop: function (event, ui) {
             ui.draggable.position({
                 of: $(this),
                 my: 'left top',
@@ -33,10 +33,10 @@ $( function() {
         }
     });
 
-    $( "#game-drop-tomatos" ).droppable({
+    $("#game-drop-tomatos").droppable({
         accept: "#game-image-tomatos",
         tolerance: "pointer",
-        drop: function( event, ui ) {
+        drop: function (event, ui) {
             ui.draggable.position({
                 of: $(this),
                 my: 'left top',
@@ -47,10 +47,10 @@ $( function() {
         }
     });
 
-    $( "#game-drop-main-background" ).droppable({
+    $("#game-drop-main-background").droppable({
         accept: "#game-image-main-background",
         tolerance: "pointer",
-        drop: function( event, ui ) {
+        drop: function (event, ui) {
             ui.draggable.position({
                 of: $(this),
                 my: 'left top',
@@ -61,10 +61,10 @@ $( function() {
         }
     });
 
-    $( "#game-drop-blackberries" ).droppable({
+    $("#game-drop-blackberries").droppable({
         accept: "#game-image-blackberries",
         tolerance: "pointer",
-        drop: function( event, ui ) {
+        drop: function (event, ui) {
             ui.draggable.position({
                 of: $(this),
                 my: 'left top',
@@ -75,10 +75,10 @@ $( function() {
         }
     });
 
-    $( "#game-drop-kiwi" ).droppable({
+    $("#game-drop-kiwi").droppable({
         accept: "#game-image-kiwi",
         tolerance: "pointer",
-        drop: function( event, ui ) {
+        drop: function (event, ui) {
             ui.draggable.position({
                 of: $(this),
                 my: 'left top',
@@ -89,10 +89,10 @@ $( function() {
         }
     });
 
-    $( "#game-drop-table" ).droppable({
+    $("#game-drop-table").droppable({
         accept: "#game-image-table",
         tolerance: "pointer",
-        drop: function( event, ui ) {
+        drop: function (event, ui) {
             ui.draggable.position({
                 of: $(this),
                 my: 'left top',
@@ -103,10 +103,10 @@ $( function() {
         }
     });
 
-    $( "#game-drop-cabbage" ).droppable({
+    $("#game-drop-cabbage").droppable({
         accept: "#game-image-cabbage",
         tolerance: "pointer",
-        drop: function( event, ui ) {
+        drop: function (event, ui) {
             ui.draggable.position({
                 of: $(this),
                 my: 'left top',
@@ -117,10 +117,10 @@ $( function() {
         }
     });
 
-    $( "#game-drop-pepper" ).droppable({
+    $("#game-drop-pepper").droppable({
         accept: "#game-image-pepper",
         tolerance: "pointer",
-        drop: function( event, ui ) {
+        drop: function (event, ui) {
             ui.draggable.position({
                 of: $(this),
                 my: 'left top',
@@ -131,10 +131,10 @@ $( function() {
         }
     });
 
-    $( "#game-drop-broccoli" ).droppable({
+    $("#game-drop-broccoli").droppable({
         accept: "#game-image-broccoli",
         tolerance: "pointer",
-        drop: function( event, ui ) {
+        drop: function (event, ui) {
             ui.draggable.position({
                 of: $(this),
                 my: 'left top',
@@ -145,10 +145,10 @@ $( function() {
         }
     });
 
-    $( "#game-drop-right-background" ).droppable({
+    $("#game-drop-right-background").droppable({
         accept: "#game-image-right-background",
         tolerance: "pointer",
-        drop: function( event, ui ) {
+        drop: function (event, ui) {
             ui.draggable.position({
                 of: $(this),
                 my: 'left top',
@@ -160,38 +160,36 @@ $( function() {
     });
 
 
+});
 
-} );
-
-function check()
-{
+function check() {
     let full = true;
-    if(correct["game-image-left-background"] === 0)
+    if (correct["game-image-left-background"] === 0)
         full = false;
-    if(correct["game-image-banana"] === 0)
+    if (correct["game-image-banana"] === 0)
         full = false;
-    if(correct["game-image-tomatos"] === 0)
+    if (correct["game-image-tomatos"] === 0)
         full = false;
-    if(correct["game-image-main-background"] === 0)
+    if (correct["game-image-main-background"] === 0)
         full = false;
-    if(correct["game-image-blackberries"] === 0)
+    if (correct["game-image-blackberries"] === 0)
         full = false;
-    if(correct["game-image-kiwi"] === 0)
+    if (correct["game-image-kiwi"] === 0)
         full = false;
-    if(correct["game-image-table"] === 0)
+    if (correct["game-image-table"] === 0)
         full = false;
-    if(correct["game-image-cabbage"] === 0)
+    if (correct["game-image-cabbage"] === 0)
         full = false;
-    if(correct["game-image-pepper"] === 0)
+    if (correct["game-image-pepper"] === 0)
         full = false;
-    if(correct["game-image-broccoli"] === 0)
+    if (correct["game-image-broccoli"] === 0)
         full = false;
-    if(correct["game-image-right-background"] === 0)
+    if (correct["game-image-right-background"] === 0)
         full = false;
     return full;
 }
 
-function setWrongPosition(){
+function setWrongPosition() {
     let leftBackground = document.getElementById("game-image-left-background");
     leftBackground.style.top = 0 + "%";
     leftBackground.style.left = 200 + "%";
@@ -230,7 +228,7 @@ function setWrongPosition(){
 
     let broccoli = document.getElementById("game-image-broccoli");
     broccoli.style.top = 100 + "%";
-    broccoli.style.left= -250 + "%";
+    broccoli.style.left = -250 + "%";
 
     let rightBackground = document.getElementById("game-image-right-background");
     rightBackground.style.top = 0 + "%";
@@ -238,12 +236,10 @@ function setWrongPosition(){
 }
 
 
-function startGame()
-{
-    $( "#game-image-left-background, #game-image-banana, #game-image-tomatos, #game-image-main-background, #game-image-blackberries, #game-image-kiwi, #game-image-table, #game-image-cabbage, #game-image-pepper, #game-image-broccoli, #game-image-right-background" ).draggable(
+function startGame() {
+    $("#game-image-left-background, #game-image-banana, #game-image-tomatos, #game-image-main-background, #game-image-blackberries, #game-image-kiwi, #game-image-table, #game-image-cabbage, #game-image-pepper, #game-image-broccoli, #game-image-right-background").draggable(
         {
-            start:function ()
-            {
+            start: function () {
                 correct[this.id] = 0;
             }
         }
@@ -257,18 +253,14 @@ function startGame()
 }
 
 
-
-function startTime()
-{
+function startTime() {
     clearInterval(stopWatch);
-    stopWatch = setInterval(timer,1000);
+    stopWatch = setInterval(timer, 1000);
 }
 
-function timer()
-{
+function timer() {
     second++;
-    if(second === 60)
-    {
+    if (second === 60) {
         minute++;
         second = 0;
     }
@@ -279,31 +271,26 @@ function timer()
     document.getElementById("time").innerHTML = formattedMM + ":" + formattedSS;
 }
 
-function stopTime()
-{
+function stopTime() {
     clearInterval(stopWatch);
 }
 
-function resetTime()
-{
+function resetTime() {
     minute = 0;
     second = 0;
     document.getElementById("time").innerHTML = "00:00";
 }
 
-function endGame()
-{
-    if(check())
-    {
+function endGame() {
+    if (check()) {
         stopTime();
         showEndGameModal();
         fromResetToStart();
-        $( "#game-image-left-background, #game-image-banana, #game-image-tomatos, #game-image-main-background, #game-image-blackberries, #game-image-kiwi, #game-image-table, #game-image-cabbage, #game-image-pepper, #game-image-broccoli, #game-image-right-background" ).draggable("destroy");
+        $("#game-image-left-background, #game-image-banana, #game-image-tomatos, #game-image-main-background, #game-image-blackberries, #game-image-kiwi, #game-image-table, #game-image-cabbage, #game-image-pepper, #game-image-broccoli, #game-image-right-background").draggable("destroy");
     }
 }
 
-function allIncorrect()
-{
+function allIncorrect() {
     correct["game-image-left-background"] = 0;
     correct["game-image-banana"] = 0;
     correct["game-image-tomatos"] = 0;
@@ -317,69 +304,61 @@ function allIncorrect()
     correct["game-image-right-background"] = 0;
 }
 
-function turnOnDemo()
-{
+function turnOnDemo() {
     turnOffTransitionOnImage();
     stopTime();
     resetTime();
     fromResetToStart();
     setWrongPosition();
-    setTimeout(turnOnTransitionOnImage,1000);
+    setTimeout(turnOnTransitionOnImage, 1000);
 
 
 }
 
-function turnOnTransitionOnImage()
-{
-    turnOnOffTransitionOnImage(true,"game-image-left-background",0);
-    turnOnOffTransitionOnImage(true,"game-image-banana",1);
-    turnOnOffTransitionOnImage(true,"game-image-tomatos",2);
-    turnOnOffTransitionOnImage(true,"game-image-main-background",3);
-    turnOnOffTransitionOnImage(true,"game-image-blackberries",4);
-    turnOnOffTransitionOnImage(true,"game-image-kiwi",5);
-    turnOnOffTransitionOnImage(true,"game-image-table",6);
-    turnOnOffTransitionOnImage(true,"game-image-cabbage",7);
-    turnOnOffTransitionOnImage(true,"game-image-pepper",8);
-    turnOnOffTransitionOnImage(true,"game-image-broccoli",9);
-    turnOnOffTransitionOnImage(true,"game-image-right-background",10);
+function turnOnTransitionOnImage() {
+    turnOnOffTransitionOnImage(true, "game-image-left-background", 0);
+    turnOnOffTransitionOnImage(true, "game-image-banana", 1);
+    turnOnOffTransitionOnImage(true, "game-image-tomatos", 2);
+    turnOnOffTransitionOnImage(true, "game-image-main-background", 3);
+    turnOnOffTransitionOnImage(true, "game-image-blackberries", 4);
+    turnOnOffTransitionOnImage(true, "game-image-kiwi", 5);
+    turnOnOffTransitionOnImage(true, "game-image-table", 6);
+    turnOnOffTransitionOnImage(true, "game-image-cabbage", 7);
+    turnOnOffTransitionOnImage(true, "game-image-pepper", 8);
+    turnOnOffTransitionOnImage(true, "game-image-broccoli", 9);
+    turnOnOffTransitionOnImage(true, "game-image-right-background", 10);
 }
 
-function turnOffTransitionOnImage()
-{
-    turnOnOffTransitionOnImage(false,"game-image-left-background",0);
-    turnOnOffTransitionOnImage(false,"game-image-banana",1);
-    turnOnOffTransitionOnImage(false,"game-image-tomatos",2);
-    turnOnOffTransitionOnImage(false,"game-image-main-background",3);
-    turnOnOffTransitionOnImage(false,"game-image-blackberries",4);
-    turnOnOffTransitionOnImage(false,"game-image-kiwi",5);
-    turnOnOffTransitionOnImage(false,"game-image-table",6);
-    turnOnOffTransitionOnImage(false,"game-image-cabbage",7);
-    turnOnOffTransitionOnImage(false,"game-image-pepper",8);
-    turnOnOffTransitionOnImage(false,"game-image-broccoli",9);
-    turnOnOffTransitionOnImage(false,"game-image-right-background",10);
+function turnOffTransitionOnImage() {
+    turnOnOffTransitionOnImage(false, "game-image-left-background", 0);
+    turnOnOffTransitionOnImage(false, "game-image-banana", 1);
+    turnOnOffTransitionOnImage(false, "game-image-tomatos", 2);
+    turnOnOffTransitionOnImage(false, "game-image-main-background", 3);
+    turnOnOffTransitionOnImage(false, "game-image-blackberries", 4);
+    turnOnOffTransitionOnImage(false, "game-image-kiwi", 5);
+    turnOnOffTransitionOnImage(false, "game-image-table", 6);
+    turnOnOffTransitionOnImage(false, "game-image-cabbage", 7);
+    turnOnOffTransitionOnImage(false, "game-image-pepper", 8);
+    turnOnOffTransitionOnImage(false, "game-image-broccoli", 9);
+    turnOnOffTransitionOnImage(false, "game-image-right-background", 10);
 
 }
 
-function turnOnOffTransitionOnImage(on,id,poradie)
-{
+function turnOnOffTransitionOnImage(on, id, poradie) {
     let obr = document = document.getElementById(id);
     obr.style.top = 0 + "%";
     obr.style.left = 0 + "%";
-    if(on)
-    {
+    if (on) {
         obr.style.transition = "left 2s, top 2s";
-        obr.style.transitionDelay = 2*poradie + "s";
-    }
-    else
-    {
+        obr.style.transitionDelay = 2 * poradie + "s";
+    } else {
         obr.style.transition = "";
         obr.style.transitionDelay = "";
     }
 }
 
 
-function showEndGameModal()
-{
+function showEndGameModal() {
     let timeInModal = document.getElementById("end-game-time");
     timeInModal.innerHTML = document.getElementById("time").innerHTML;
 
@@ -388,22 +367,19 @@ function showEndGameModal()
     modal.classList.add("end-game-modal");
 }
 
-function deleteEndGameModal()
-{
+function deleteEndGameModal() {
     let modal = document.getElementById("end-game-modal");
     modal.classList.remove("end-game-modal");
     modal.classList.add("end-game-modal-hidden");
 }
 
 
-function fromStartToReset()
-{
+function fromStartToReset() {
     let button = document.getElementById("start");
     button.innerHTML = "Reset";
 }
 
-function fromResetToStart()
-{
+function fromResetToStart() {
     let button = document.getElementById("start");
     button.innerHTML = "Štart";
 }
