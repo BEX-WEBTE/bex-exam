@@ -1,0 +1,63 @@
+
+.content-table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    font-size: larger;
+    min-width: 250px;
+    border-collapse:separate;
+    border: 3px solid black;
+    overflow: hidden;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+
+
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.05);
+}
+
+.content-table thead tr {
+    color: #000;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.center-checkmark{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.scrollable-table{
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+}
+
+
+
+.color-tasks{
+    background-color: #EAEAEA;
+}
+
+.color-palencar{
+    background-color: #C5F5FF;
+}
+
+.color-peluha{
+    background-color: #FFF7B0;
+}
+
+.color-sremanak{
+    background-color: #FFC5C5;
+}
+
+.color-sokol{
+    background-color: #D7FFC5;
+}
+
+
