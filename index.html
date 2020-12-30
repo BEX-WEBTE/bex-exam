@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Exam</title>
+
     <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -40,25 +41,19 @@
 
 
 
+    <script src="app/three-level-menu/js/three-level-menu.component.js"></script>
 
 
 </head>
 <body>
 
 
-<nav class="navigation-bar no-print">
-    <ul class="navigation-bar-row">
-        <li class="item item-active"><a class="item-link" href="./index.html">Domov</a></li>
-        <li class="item"><a class="item-link" href="#"><span>O nás</span></a></li>
-        <li class="item"><a class="item-link" href="#">Hry</a></li>
-        <li class="item"><a class="item-link" href="#">Škola</a></li>
-    </ul>
-</nav>
+<three-level-menu>
+</three-level-menu>
 
 <div class="breadcrumbs-container">
     <breadcrumbs-component></breadcrumbs-component>
 </div>
-
 
 <section class="thumbnail-container">
     <div class="thumbnail-container-game gamepad-background thumbnail-container-background"
@@ -102,7 +97,7 @@
 
     <attendance-counter class="attendance-background thumbnail-container-event thumbnail-container-background"
                         id="attendance-counter"></attendance-counter>
-    
+
     <nameday-finder class="thumbnail-container-event name-day-background thumbnail-container-background"></nameday-finder>
 
 </section>
