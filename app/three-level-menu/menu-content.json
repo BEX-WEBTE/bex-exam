@@ -44,22 +44,22 @@
           "child": [
             {
               "id": "sremanakHra",
-              "title": "Vzajati slameniaka",
+              "title": "Hororové postavičky",
               "path": "sremanak/html/game.html"
             },
             {
               "id": "peluhaHra",
-              "title": "Pehuliacik a 4 zlobri",
+              "title": "My little pony",
               "path": "peluha/html/game.html"
             },
             {
               "id": "palencarHra",
-              "title": "Nezvestný v svete ježišovom",
+              "title": "Pohľady Florencie",
               "path": "palencar/html/game.html"
             },
             {
               "id": "sokolHra",
-              "title": "Richlo a zbesylo IE edícia",
+              "title": "Vitamín C",
               "path": "sokol/html/game.html"
             }
           ]
