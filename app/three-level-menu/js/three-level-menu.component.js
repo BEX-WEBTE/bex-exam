@@ -15,9 +15,9 @@ class ThreeLevelMenuComponent extends HTMLElement {
         this.dom = this.attachShadow({mode: 'open'});
         this.loadHtml().then(text => {
             this.dom.innerHTML = text;
+            this.loadCss();
             this.loadMenuContent().then(json => {
                 this.menuContent = json.menuContent;
-                this.loadCss();
                 this.createListFromMenuContent();
             });
         });
