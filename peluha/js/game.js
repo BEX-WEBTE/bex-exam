@@ -360,9 +360,12 @@ function normalizeAfterAnimation(id){
 
 
 function onLoad() {
+
     initStartButton();
     initModal();
     initDemoButton();
+
+    handleAttendanceCookies();
 }
 
 

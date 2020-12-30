@@ -200,5 +200,6 @@ function onLoad() {
         puzzle.createPiecesFromImagesAndDrawToCanvas(json.images);
     });
 
+    handleAttendanceCookies()
 }
 

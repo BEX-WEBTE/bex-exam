@@ -407,3 +407,5 @@ function fromResetToStart()
     let button = document.getElementById("start");
     button.innerHTML = "Štart";
 }
+
+handleAttendanceCookies();
