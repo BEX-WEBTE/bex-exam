@@ -21,7 +21,7 @@ function getCookie(cname) {
     return "";
 }
 
-function handleAttendanceCookies(path) {
+function handleAttendanceCookies() {
     let numberOfVisits = 1;
     const cookiesNumberOfVisits = getCookie("numberOfVisits");
 
