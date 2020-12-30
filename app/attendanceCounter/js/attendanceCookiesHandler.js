@@ -24,10 +24,10 @@ function getCookie(cname) {
 function handleAttendanceCookies(path){
     let numberOfVisits = 1;
     const cookiesNumberOfVisits = getCookie("numberOfVisits");
+
     if(cookiesNumberOfVisits) {
         numberOfVisits = parseInt(cookiesNumberOfVisits, 10) + 1;
     }
-    console.log(numberOfVisits);
 
     setCookie("numberOfVisits", "" + numberOfVisits, 30);
 
