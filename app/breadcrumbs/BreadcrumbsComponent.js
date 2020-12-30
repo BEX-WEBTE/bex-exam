@@ -47,7 +47,7 @@ class BreadcrumbsComponent extends HTMLElement {
     connectedCallback() {
         document.addEventListener("DOMContentLoaded", () => {
 
-            let breadcrumbs = getCookie("br2");
+            let breadcrumbs = getCookie("breadcrumbs-cookies");
             if (breadcrumbs) {
                 breadcrumbs = JSON.parse(breadcrumbs);
                 if (!compareBreadcrumbs(breadcrumbs[breadcrumbs.length - 1], getActiveBreadcrumb())) {
@@ -60,7 +60,7 @@ class BreadcrumbsComponent extends HTMLElement {
                 breadcrumbs = [getActiveBreadcrumb()];
             }
 
-            setCookie("br2", JSON.stringify(breadcrumbs), 1);
+            setCookie("breadcrumbs-cookies", JSON.stringify(breadcrumbs), 1);
             let breadcrumbsList = this.shadowRoot.getElementById("breadcrumbs-list");
             breadcrumbs.forEach((item, index) => {
                 let breadcrumb = document.createElement("li");
