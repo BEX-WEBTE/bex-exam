@@ -5,3 +5,13 @@
 .game-container-canvas {
     border-color: #FFC5C5;
 }
+
+.piece-image {
+    stroke: none;
+}
+
+.game-container-settings-difficulty {
+    display: inline-flex;
+    display: -moz-inline-box;
+    transition: letter-spacing 1s;
+}

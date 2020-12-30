@@ -10,11 +10,29 @@
     <link href="../../app/css/header.css" rel="stylesheet">
     <link href="../../app/css/game-style.css" rel="stylesheet">
     <link href="../css/game.css" rel="stylesheet">
-    <script src="../js/game.js"></script>
+    <script src="../js/canvas/coordinates.js"></script>
+    <script src="../js/puzzle/piece/imagePiece.js"></script>
+    <script src="../js/puzzle/piece/piece.js"></script>
+    <script src="../js/puzzle/puzzle.js"></script>
+    <script src="../js/canvas/dimension.js"></script>
+    <script src="../js/canvas/engine/gameEngine.js"></script>
+    <script defer src="../js/game.js"></script>
+    <script src="https://unpkg.com/konva@7.0.3/konva.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 
 </head>
-<body>
+<body onload="onLoad()">
+<audio id="tick" preload="auto" src="../../app/assets/audio/sremanak/tick.mp3"></audio>
+<audio id="done" preload="auto" src="../../app/assets/audio/sremanak/done.mp3"></audio>
 <nav class="navigation-bar">
     <ul class="navigation-bar-row">
         <li class="item"><a class="item-link" href="../../index.html">Domov</a></li>
@@ -25,25 +43,41 @@
 </nav>
 
 
-<section class="game-container">
+<section class="game-container" id="game-container">
     <div class="game-container-info robot-background">
-        <h1 class="game-container-info-title bold-max">Názov hry</h1>
+        <h1 class="game-container-info-title bold-max">Hororové postavičky</h1>
         <h2 class="game-container-info-name">Ľuboš <span class="bold-max">Sremaňák</span></h2>
     </div>
 
     <div class="game-container-settings">
-        <button class="game-container-settings-button" id="start">Štart</button>
-        <button class="game-container-settings-button" id="reset">Reset</button>
-        <button class="game-container-settings-button" id="demo">Demo</button>
+        <div class="dropdown game-container-settings-difficulty">
+            <button aria-expanded="false" aria-haspopup="true" class="dropdown-toggle game-container-settings-button"
+                    data-toggle="dropdown"
+                    id="difficulty" type="button" value="difficulty">
+                Obtiažnosť
+            </button>
+            <div aria-labelledby="difficulty" class="dropdown-menu">
+                <button class="dropdown-item  game-container-settings-button" id="easyOption" onclick="difficulty(this)"
+                        value="easy">Ľahká
+                </button>
+                <button class="dropdown-item  game-container-settings-button" id="mediumOption"
+                        onclick="difficulty(this)"
+                        value="medium">Stredná
+                </button>
+                <button class="dropdown-item  game-container-settings-button" id="hardOption" onclick="difficulty(this)"
+                        value="hard">Ťažká
+                </button>
+            </div>
+        </div>
+        <button class="game-container-settings-button" id="start" onclick="startGame(this)" value="true">Štart</button>
+        <button class="game-container-settings-button" id="demo" onclick="demo()">Demo</button>
         <span class="" id="time">00:00</span>
+
     </div>
 
 
-    <canvas class="game-container-canvas" height="500" id="game-canvas" width="1000">
-        <img alt="Game picture" height="500" id="game-image"
-             src="../../app/assets/images/1000x500.png"
-             width="1000">
-    </canvas>
+    <div class="game-container-canvas" id="game-canvas">
+    </div>
 </section>
 </body>
 </html>
