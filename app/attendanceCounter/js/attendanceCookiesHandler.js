@@ -24,12 +24,8 @@ function getCookie(cname) {
 function handleAttendanceCookies(path) {
     let numberOfVisits = 1;
     const cookiesNumberOfVisits = getCookie("numberOfVisits");
-<<<<<<< HEAD:app/js/attendanceCookiesHandler.js
-    if (cookiesNumberOfVisits) {
-=======
 
-    if(cookiesNumberOfVisits) {
->>>>>>> AttendanceCounter:app/attendanceCounter/js/attendanceCookiesHandler.js
+    if (cookiesNumberOfVisits) {
         numberOfVisits = parseInt(cookiesNumberOfVisits, 10) + 1;
     }
 
