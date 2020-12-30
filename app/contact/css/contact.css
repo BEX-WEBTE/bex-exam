@@ -1,0 +1,53 @@
+.contact-content{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    min-width: 280px;
+}
+
+.contact-img{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    display: block;
+    width: 200px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.contact-name{
+    font-size: x-large;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.contact-table{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    font-size: larger;
+    min-width: 250px;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+}
+
+.contact-table thead tr {
+    color: #000;
+    text-align: left;
+    font-weight: bold;
+}
+
+.contact-table th,
+.contact-table td {
+    font-size: large;
+    padding: 12px 15px;
+
+}
+
