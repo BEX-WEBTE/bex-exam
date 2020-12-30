@@ -262,7 +262,7 @@ class NameDayFinderComponent extends HTMLElement {
                 xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
             }
 
-            xmlhttp.open("GET", "app/namedayFinder/xml/meniny.xml", false);
+            xmlhttp.open("GET", "app/nameDayFinder/xml/meniny.xml", false);
             xmlhttp.send();
             return xmlhttp.responseXML;
         }
