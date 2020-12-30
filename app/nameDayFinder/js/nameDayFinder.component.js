@@ -4,14 +4,8 @@ class NameDayFinderComponent extends HTMLElement {
             + '<span id="intro-text-name" class="thumbnail-container-event-title ">Dnes '
             + '<em id="text-today" class="bold-max">24.12.</em> meniny oslavuje:'
             + '<br><em id="text-name" class="bold-max"> Matej </em>'
-            + '<span class="button-with-icon">'
-            + '<button id="more-names-button">'
-            + '<a id="more-names-a" data-toggle="collapse" href="#more-names" aria-expanded="false" aria-controls="more-names" >všetky mená</a>'
-            + '<i class="far fa-caret-square-down"></i>'
-            + '</button>'
             + '</span>'
-            + '</span>'
-            + '<p id="more-names" class="collapse">Žiadne ďalšie mená</p>'
+            + '<br><em id="more-names-label" class="bold-max">Všetky mená: </em><p id="more-names">Žiadne ďalšie mená</p>'
             + '<br><span id="intro-text-holiday" class="thumbnail-container-event-title ">Dnes oslavujeme sviatok:'
             + '<br><em id="text-holiday" class="bold-max"> Vianoce </em></span></div>';
 
@@ -71,6 +65,7 @@ class NameDayFinderComponent extends HTMLElement {
 
             let date = document.getElementById("date-input").value;
             date = getFormattedDate(date);
+
 
             let activeCountry = document.getElementsByClassName("active-country")[0].innerText;
             if (activeCountry === "SK")
@@ -208,8 +203,8 @@ class NameDayFinderComponent extends HTMLElement {
             if (activeCountry === "SK")
                 showSlovakExtendedNames(date);
             else {
-                const moreNamesButton = document.getElementById("more-names-button");
-                moreNamesButton.style.display = "none";
+                document.getElementById("more-names").style.display = "none";
+                document.getElementById("more-names-label").style.display = "none";
             }
         }
 
@@ -226,8 +221,10 @@ class NameDayFinderComponent extends HTMLElement {
         function showSlovakExtendedNames(date) {
             const slovakExtendedNames = getNames(date, "SKd");
             const moreNames = document.getElementById("more-names");
-            const moreNamesButton = document.getElementById("more-names-button");
-            moreNamesButton.style.display = "unset";
+            const moreNamesLabel = document.getElementById("more-names-label")
+
+            moreNames.style.display = "unset";
+            moreNamesLabel.style.display = "unset";
 
             moreNames.innerText = slovakExtendedNames;
         }

@@ -66,6 +66,10 @@ ul#country-chooser li:hover {
 
 #more-names-button {
     transition: all 0.5s;
+    border: 1px solid black;
+    padding: 3px;
+    border-radius: 10px;
+    margin-left: 5px;
 }
 
 .button-with-icon {
