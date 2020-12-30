@@ -55,6 +55,7 @@ class ThreeLevelMenuComponent extends HTMLElement {
         this.createCssLink("app/css/header.css");
         this.createCssLink("app/three-level-menu/css/three-level-menu.component.css");
         this.createCssLink("style.css");
+        this.createCssLink("app/css/print.css");
     }
 
     async loadMenuContent() {
