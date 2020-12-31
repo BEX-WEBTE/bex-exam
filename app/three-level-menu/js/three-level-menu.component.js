@@ -85,9 +85,21 @@ class ThreeLevelMenuComponent extends HTMLElement {
         return div;
     }
 
+    setLinkActive(link) {
+        if (link.href === window.location.href) {
+            link.classList.add("item-active");
+        }
+    }
+
     setAttributeAndTextOfLinkFromItem(link, item) {
 
-        link.setAttribute("href", this.getWebPrefix(2) + item.path)
+        if (item.path) {
+            link.setAttribute("href", this.getWebPrefix(2) + item.path)
+            this.setLinkActive(link);
+
+        } else {
+            link.classList.add("item-link-disabled");
+        }
         link.innerText = item.title;
     }
 
