@@ -41,6 +41,10 @@
     font-weight: 900;
 }
 
+.item-link-disabled {
+    pointer-events: none;
+    cursor: default;
+}
 
 @media screen and (max-width: 600px) {
     .navigation-bar {
