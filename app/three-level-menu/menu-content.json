@@ -8,29 +8,7 @@
     {
       "id": "aboutUs",
       "title": "O nás",
-      "path": "#",
-      "child": [
-        {
-          "id": "sremanak",
-          "title": "Sremaňák",
-          "path": ""
-        },
-        {
-          "id": "peluha",
-          "title": "Peluha",
-          "path": ""
-        },
-        {
-          "id": "palencar",
-          "title": "Palenčár",
-          "path": ""
-        },
-        {
-          "id": "sokol",
-          "title": "Sokol",
-          "path": ""
-        }
-      ]
+      "path": "app/contact/html/contact.html"
     },
     {
       "id": "games",
