@@ -13,12 +13,10 @@
     {
       "id": "games",
       "title": "Hry",
-      "path": "#",
       "child": [
         {
           "id": "puzzle",
           "title": "Puzzle",
-          "path": "#",
           "child": [
             {
               "id": "sremanakHra",
@@ -47,7 +45,6 @@
     {
       "id": "school",
       "title": "Škola",
-      "path": "#",
       "child": [
         {
           "id": "feiSti",
