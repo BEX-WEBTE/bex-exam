@@ -39,7 +39,6 @@
 .item-link:hover:not(.item-active) {
     color: black;
     font-weight: 900;
-    cursor: pointer;
 }
 
 
