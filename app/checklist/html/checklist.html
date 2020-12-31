@@ -12,6 +12,7 @@
     <link href="../../css/index.css" rel="stylesheet">
     <link href="../../css/home-layout.css" rel="stylesheet">
     <link href="../css/checklist.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/breadcrumbs.css">
     <script crossorigin="anonymous"
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
             src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -23,28 +24,25 @@
             src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="../../js/index.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
+    <script src="../../breadcrumbs/BreadcrumbsComponent.js"></script>
+    <script src="../../three-level-menu/js/three-level-menu.component.js"></script>
 </head>
 <body>
 
 
-<nav class="navigation-bar">
-
-    <ul class="navigation-bar-row">
-        <li class="item item-active"><a class="item-link" href="../../../index.html">Domov</a></li>
-        <li class="item"><a class="item-link" href="#"><span>O nás</span></a></li>
-        <li class="item"><a class="item-link" href="#">Hry</a></li>
-        <li class="item"><a class="item-link" href="#">Škola</a></li>
-    </ul>
-</nav>
+<three-level-menu>
+</three-level-menu>
+<div class="breadcrumbs-container">
+    <breadcrumbs-component></breadcrumbs-component>
+</div>
 
 
 <section class="thumbnail-container">
     <div class="scrollable-table">
 
 
-    <table class="content-table">
-        <thead>
+        <table class="content-table">
+            <thead>
             <tr>
                 <th class="color-tasks">Úlohy</th>
                 <th class="color-palencar">Michal Palenčár</th>
@@ -53,12 +51,16 @@
                 <th class="color-sokol">Kristián Sokol</th>
 
             </tr>
-        </thead>
+            </thead>
 
-        <tbody class="scrollable-table">
+            <tbody class="scrollable-table">
             <tr>
                 <td>strihanie obrázkov</td>
-                <td><lottie-player class="center-checkmark icon-size" src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1" autoplay></lottie-player></td>
+                <td>
+                    <lottie-player class="center-checkmark icon-size"
+                                   src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1"
+                                   autoplay></lottie-player>
+                </td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -66,7 +68,11 @@
 
             <tr>
                 <td>checklist</td>
-                <td><lottie-player class="center-checkmark icon-size" src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1" autoplay></lottie-player></td>
+                <td>
+                    <lottie-player class="center-checkmark icon-size"
+                                   src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1"
+                                   autoplay></lottie-player>
+                </td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -74,7 +80,11 @@
 
             <tr>
                 <td>kontakt</td>
-                <td><lottie-player class="center-checkmark icon-size" src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1" autoplay></lottie-player></td>
+                <td>
+                    <lottie-player class="center-checkmark icon-size"
+                                   src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1"
+                                   autoplay></lottie-player>
+                </td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -82,7 +92,11 @@
 
             <tr>
                 <td>hlavička</td>
-                <td><lottie-player class="center-checkmark icon-size" src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1" autoplay></lottie-player></td>
+                <td>
+                    <lottie-player class="center-checkmark icon-size"
+                                   src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1"
+                                   autoplay></lottie-player>
+                </td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -92,7 +106,11 @@
                 <td>štruktúra projektu</td>
                 <td></td>
                 <td></td>
-                <td><lottie-player class="center-checkmark icon-size" src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1" autoplay></lottie-player></td>
+                <td>
+                    <lottie-player class="center-checkmark icon-size"
+                                   src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1"
+                                   autoplay></lottie-player>
+                </td>
                 <td></td>
             </tr>
 
@@ -100,7 +118,11 @@
                 <td>git organizácia</td>
                 <td></td>
                 <td></td>
-                <td><lottie-player class="center-checkmark icon-size" src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1" autoplay></lottie-player></td>
+                <td>
+                    <lottie-player class="center-checkmark icon-size"
+                                   src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1"
+                                   autoplay></lottie-player>
+                </td>
                 <td></td>
             </tr>
 
@@ -108,7 +130,11 @@
                 <td>layout hlavnej stránky dizajn</td>
                 <td></td>
                 <td></td>
-                <td><lottie-player class="center-checkmark icon-size" src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1" autoplay></lottie-player></td>
+                <td>
+                    <lottie-player class="center-checkmark icon-size"
+                                   src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1"
+                                   autoplay></lottie-player>
+                </td>
                 <td></td>
             </tr>
 
@@ -116,7 +142,11 @@
                 <td>layout hier dizajn</td>
                 <td></td>
                 <td></td>
-                <td><lottie-player class="center-checkmark icon-size" src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1" autoplay></lottie-player></td>
+                <td>
+                    <lottie-player class="center-checkmark icon-size"
+                                   src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1"
+                                   autoplay></lottie-player>
+                </td>
                 <td></td>
             </tr>
 
@@ -124,7 +154,11 @@
                 <td>trojúrovňové menu komponent</td>
                 <td></td>
                 <td></td>
-                <td><lottie-player class="center-checkmark icon-size" src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1" autoplay></lottie-player></td>
+                <td>
+                    <lottie-player class="center-checkmark icon-size"
+                                   src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1"
+                                   autoplay></lottie-player>
+                </td>
                 <td></td>
             </tr>
 
@@ -132,14 +166,22 @@
                 <td>trojúrovňové menu dizajn</td>
                 <td></td>
                 <td></td>
-                <td><lottie-player class="center-checkmark icon-size" src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1" autoplay></lottie-player></td>
+                <td>
+                    <lottie-player class="center-checkmark icon-size"
+                                   src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1"
+                                   autoplay></lottie-player>
+                </td>
                 <td></td>
             </tr>
 
             <tr>
                 <td>počítadlo prístupov komponent</td>
                 <td></td>
-                <td><lottie-player class="center-checkmark icon-size" src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1" autoplay></lottie-player></td>
+                <td>
+                    <lottie-player class="center-checkmark icon-size"
+                                   src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1"
+                                   autoplay></lottie-player>
+                </td>
                 <td></td>
                 <td></td>
             </tr>
@@ -147,7 +189,11 @@
             <tr>
                 <td>počítadlo prístupov dizajn</td>
                 <td></td>
-                <td><lottie-player class="center-checkmark icon-size" src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1" autoplay></lottie-player></td>
+                <td>
+                    <lottie-player class="center-checkmark icon-size"
+                                   src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1"
+                                   autoplay></lottie-player>
+                </td>
                 <td></td>
                 <td></td>
             </tr>
@@ -155,7 +201,11 @@
             <tr>
                 <td>meniny komponent</td>
                 <td></td>
-                <td><lottie-player class="center-checkmark icon-size" src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1" autoplay></lottie-player></td>
+                <td>
+                    <lottie-player class="center-checkmark icon-size"
+                                   src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1"
+                                   autoplay></lottie-player>
+                </td>
                 <td></td>
                 <td></td>
             </tr>
@@ -163,7 +213,11 @@
             <tr>
                 <td>meniny dizajn</td>
                 <td></td>
-                <td><lottie-player class="center-checkmark icon-size" src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1" autoplay></lottie-player></td>
+                <td>
+                    <lottie-player class="center-checkmark icon-size"
+                                   src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1"
+                                   autoplay></lottie-player>
+                </td>
                 <td></td>
                 <td></td>
             </tr>
@@ -173,7 +227,11 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><lottie-player class="center-checkmark icon-size" src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1" autoplay></lottie-player></td>
+                <td>
+                    <lottie-player class="center-checkmark icon-size"
+                                   src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1"
+                                   autoplay></lottie-player>
+                </td>
             </tr>
 
             <tr>
@@ -181,7 +239,11 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><lottie-player class="center-checkmark icon-size" src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1" autoplay></lottie-player></td>
+                <td>
+                    <lottie-player class="center-checkmark icon-size"
+                                   src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1"
+                                   autoplay></lottie-player>
+                </td>
             </tr>
 
             <tr>
@@ -189,7 +251,11 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><lottie-player class="center-checkmark icon-size" src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1" autoplay></lottie-player></td>
+                <td>
+                    <lottie-player class="center-checkmark icon-size"
+                                   src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1"
+                                   autoplay></lottie-player>
+                </td>
             </tr>
 
             <tr>
@@ -197,18 +263,26 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><lottie-player class="center-checkmark icon-size" src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1" autoplay></lottie-player></td>
+                <td>
+                    <lottie-player class="center-checkmark icon-size"
+                                   src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1"
+                                   autoplay></lottie-player>
+                </td>
             </tr>
 
             <tr>
                 <td>grafický návrh stránky</td>
-                <td><lottie-player class="center-checkmark icon-size" src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1" autoplay></lottie-player></td>
+                <td>
+                    <lottie-player class="center-checkmark icon-size"
+                                   src="https://assets7.lottiefiles.com/packages/lf20_jjjqiczh.json" speed="1"
+                                   autoplay></lottie-player>
+                </td>
                 <td></td>
                 <td></td>
                 <td></td>
             </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
     </div>
 
     <div class="scrollable-table">
@@ -233,17 +307,15 @@
             </tr>
 
             <tr>
-                <td><a class="a-link-color" href="https://www.lauwers.be/Media/LAUW/_Profiles/bc2da2b2/a9621f4e/12492-2%20Firenze.jpg?v=637432752956418284">obrázok (Pohľady Florencie)</a></td>
+                <td><a class="a-link-color"
+                       href="https://www.lauwers.be/Media/LAUW/_Profiles/bc2da2b2/a9621f4e/12492-2%20Firenze.jpg?v=637432752956418284">obrázok
+                    (Pohľady Florencie)</a></td>
             </tr>
-
 
 
             </tbody>
         </table>
     </div>
-
-
-
 
 
 </section>

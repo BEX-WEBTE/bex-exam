@@ -8,7 +8,18 @@
     {
       "id": "aboutUs",
       "title": "O nás",
-      "path": "app/contact/html/contact.html"
+      "child": [
+        {
+          "id": "contact",
+          "title": "Kontakt",
+          "path": "app/contact/html/contact.html"
+        },
+        {
+          "id": "contact",
+          "title": "Úlohy",
+          "path": "app/checklist/html/checklist.html"
+        }
+      ]
     },
     {
       "id": "games",
@@ -47,7 +58,7 @@
       "title": "Škola",
       "child": [
         {
-          "id": "feiSti",
+          "id": "feiStu",
           "title": "FEI STU",
           "path": ""
         }
