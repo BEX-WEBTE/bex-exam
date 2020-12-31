@@ -12,6 +12,15 @@ template.innerHTML = `
             list-style-type: none;
             font-family: "Roboto", sans-serif;
         }
+        @media screen and (max-width: 600px) {
+            ul {
+                padding:0;
+                margin:0;
+                list-style-type: none;
+                font-family: "Roboto", sans-serif;
+                font-size: 3vw;
+            }
+        }
         li {float: left; margin-left: 10px;list-style-type: ">"; padding: 0 10px; }  
     
         a:link {
