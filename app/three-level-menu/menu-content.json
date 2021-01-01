@@ -15,7 +15,7 @@
           "path": "app/contact/html/contact.html"
         },
         {
-          "id": "contact",
+          "id": "tasks",
           "title": "Úlohy",
           "path": "app/checklist/html/checklist.html"
         }
@@ -60,7 +60,7 @@
         {
           "id": "feiStu",
           "title": "FEI STU",
-          "path": ""
+          "path": "https://www.fei.stuba.sk/"
         }
       ]
     }

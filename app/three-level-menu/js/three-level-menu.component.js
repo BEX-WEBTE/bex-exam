@@ -91,12 +91,23 @@ class ThreeLevelMenuComponent extends HTMLElement {
         }
     }
 
+    areIdSame(item, itemId) {
+        return item.normalize() === itemId;
+    }
+
+    setPathToLinkConsideringToExternalPaths(item, link) {
+        let completePath = this.getWebPrefix(2) + item.path;
+        if (this.areIdSame(item.id, "feiStu")) {
+            completePath = item.path;
+        }
+        link.setAttribute("href", completePath);
+        this.setLinkActive(link);
+    }
+
     setAttributeAndTextOfLinkFromItem(link, item) {
 
         if (item.path) {
-            link.setAttribute("href", this.getWebPrefix(2) + item.path)
-            this.setLinkActive(link);
-
+            this.setPathToLinkConsideringToExternalPaths(item, link);
         } else {
             link.classList.add("item-link-disabled");
         }
