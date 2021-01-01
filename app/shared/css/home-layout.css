@@ -3,6 +3,11 @@
     display: flex;
     display: -moz-flex;
     flex-wrap: wrap;
+
+}
+
+.thumbnail-container-game {
+    margin-top: -50px;
 }
 
 .thumbnail-container-game {
@@ -114,9 +119,15 @@
     .thumbnail-container-name {
         font-size: 2.2vw;
     }
+
     .robot-image {
 
-       margin-top: 5%;
+        margin-top: 5%;
+    }
+
+    .thumbnail-container-game:nth-child(3), .thumbnail-container-game:nth-child(4) {
+        margin-top: 0 !important;
+
     }
 }
 
@@ -133,6 +144,10 @@
     .thumbnail-container-name {
 
         font-size: larger;
+    }
+
+    .thumbnail-container-game:nth-child(2) {
+        margin-top: 0 !important;
     }
 }
 
