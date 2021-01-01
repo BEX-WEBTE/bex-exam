@@ -2,7 +2,7 @@ class ThreeLevelMenuComponent extends HTMLElement {
 
 
     menuContent;
-
+    dom;
 
     constructor() {
         super();
@@ -134,5 +134,6 @@ class ThreeLevelMenuComponent extends HTMLElement {
     }
 }
 
-customElements.define('three-level-menu', ThreeLevelMenuComponent);
+if (ThreeLevelMenuComponent)
+    customElements.define('three-level-menu', ThreeLevelMenuComponent);
 
