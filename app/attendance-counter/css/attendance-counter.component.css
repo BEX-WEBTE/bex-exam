@@ -1,12 +1,16 @@
 #attendace-number {
     font-size: 10vw;
-
+    transition: color ease-in 1s;
 }
 
 #attendance-counter {
     display: flex;
     align-items: center; /* vertical */
     justify-content: center; /* horizontal */
+}
+
+#attendance-counter:hover #attendace-number {
+    color: #dc3545 !important;
 }
 
 .attendance-counter-container-text {
