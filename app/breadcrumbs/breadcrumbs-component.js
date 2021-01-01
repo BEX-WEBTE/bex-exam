@@ -18,7 +18,7 @@ template.innerHTML = `
                 margin:0;
                 list-style-type: none;
                 font-family: "Roboto", sans-serif;
-                font-size: 3vw;
+              
             }
         }
         li {float: left; margin-left: 10px;list-style-type: ">"; padding: 0 10px; }  
@@ -48,7 +48,6 @@ template.innerHTML = `
 class BreadcrumbsComponent extends HTMLElement {
     constructor() {
         super();
-
         this.attachShadow({mode: 'open'});
         this.shadowRoot.appendChild(template.content.cloneNode(true));
     }

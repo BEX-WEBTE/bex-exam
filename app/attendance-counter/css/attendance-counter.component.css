@@ -1,0 +1,20 @@
+#attendace-number {
+    font-size: 10vw;
+
+}
+
+#attendance-counter {
+    display: flex;
+    align-items: center; /* vertical */
+    justify-content: center; /* horizontal */
+}
+
+.attendance-counter-container-text {
+
+
+}
+
+attendance-counter {
+    font-size: large;
+    text-align: center;
+}

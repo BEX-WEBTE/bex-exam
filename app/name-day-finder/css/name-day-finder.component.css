@@ -1,13 +1,32 @@
+.nameday-input-div {
+    margin-top: 5px;
+    text-align: left;
+}
+
+
 .nameday-input {
     border-radius: 5px;
-    margin-left: 10px;
     border: none;
     text-align: center;
 }
 
-.nameday-input-div {
-    margin-top: 5px;
+#holiday-input, #date-input, #name-input {
+    width: calc(100% - 100px);
+    text-align: center;
 }
+
+#holiday-input {
+    margin-left: 26px !important;
+}
+
+#date-input {
+    margin-left: 50px !important;
+}
+
+#name-input {
+    margin-left: 38px !important;
+}
+
 
 #text-name, #text-holiday {
     font-size: xx-large;
@@ -18,17 +37,20 @@
     border-bottom: 1px solid black;
 }
 
-.nameday-input {
-    margin-left: 10px;
-}
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 600px) {
     .nameday-input {
-        width: 100%;
-        margin-left: 0;
+
     }
 
     .nameday-input-div {
+        margin-left: auto !important;
+
+    }
+
+    #holiday-input, #date-input, #name-input {
+        width: 100%;
+        margin-left: auto !important;
         text-align: center;
     }
 }

@@ -10,20 +10,22 @@ class NameDayFinderComponent extends HTMLElement {
             + '<br><em id="text-holiday" class="bold-max"> Vianoce </em></span></div>';
 
 
-        this.innerHTML += '<div class="nameday-input-div"><label for="date-input">Dňa  </label>'
-            + '<input class="nameday-input" type="date" id="date-input" name="date-input""></div>';
+        this.innerHTML +=
+            '<div class="name-day-inputs-container">' +
+            '<div class="nameday-input-div"><label for="date-input">Dňa  </label>'
+            + '<input class="nameday-input" type="date" id="date-input" name="date-input""></div>' +
 
-        this.innerHTML += '<div class="nameday-input-div"><label for="holiday-input">Sviatok  </label>'
-            + '<input class="nameday-input" type="text" id="holiday-input" name="holiday-input" disabled></div>';
+            '<div class="nameday-input-div"><label for="holiday-input">Sviatok  </label>'
+            + '<input class="nameday-input" type="text" id="holiday-input" name="holiday-input" disabled></div>' +
 
 
-        this.innerHTML += '<div class="nameday-input-div"><label for="name-input">Meno  </label>'
-            + '<input class="nameday-input" type="text" id="name-input" name="name-input">';
+            '<div class="nameday-input-div"><label for="name-input">Meno  </label>'
+            + '<input class="nameday-input" type="text" id="name-input" name="name-input">' +
 
-        this.innerHTML += '<div id="more-names-under-input-div"><em class="bold-max">Všetky mená: </em>'
+            '<div id="more-names-under-input-div"><em class="bold-max">Všetky mená: </em>'
             + '<span id="more-names-under-input">gfdgffdgfd</span>'
-            + '</div>'
-
+            + '</div>' +
+            '</div>';
         this.innerHTML += '<ul id="country-chooser">'
             + '<li class="active-country country"><span>SK</span></li>'
             + '<li class="country"><span>CZ</span></li>'
@@ -262,7 +264,7 @@ class NameDayFinderComponent extends HTMLElement {
                 xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
             }
 
-            xmlhttp.open("GET", "app/nameDayFinder/xml/meniny.xml", false);
+            xmlhttp.open("GET", "app/name-day-finder/xml/meniny.xml", false);
             xmlhttp.send();
             return xmlhttp.responseXML;
         }

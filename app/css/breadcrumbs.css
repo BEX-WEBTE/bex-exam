@@ -1,7 +1,9 @@
 .breadcrumbs-container {
     position: absolute;
-    margin-bottom: 100px;
     margin-top: 0;
-    top: -120px;
+    top: -110px;
     left: 1%;
+    font-size: small;
 }
+
+
