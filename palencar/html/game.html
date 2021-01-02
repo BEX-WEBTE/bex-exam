@@ -5,25 +5,44 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Pohľady Florencie</title>
     <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
     <link href="../../style.css" rel="stylesheet">
     <link href="../../app/shared/css/header.css" rel="stylesheet">
     <link href="../../app/shared/css/game-layout.css" rel="stylesheet">
     <link href="../css/game.css" rel="stylesheet">
-
-
+    <link href="../css/win-screen.css" rel="stylesheet">
     <link href="../../app/shared/css/breadcrumbs.css" rel="stylesheet">
-    <link href="../../app/shared/css/print.css" rel="stylesheet">
-    <link rel="icon" href="../../favicon.png" type="image/png">
 
+
+    <script crossorigin="anonymous"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="../../app/attendance-counter/js/attendance-cookies-handler.js"></script>
-    <script src="../js/game.js"></script>
     <script src="../../app/breadcrumbs/breadcrumbs-component.js"></script>
     <script src="../../app/three-level-menu/js/three-level-menu.component.js"></script>
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/jquery.ui.touch-punch.min.js"></script>
+    <script src="../js/game.js"></script>
 
 
 </head>
 <body>
+
+<div class="modal-hid" id="modal">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <p class="modal-text">Gratulujeme! Poskladal(a) si obrázok za:</p>
+                <p class="modal-text" id="modal-time"></p>
+                <div class="col-md-4">
+                <button class="btn modal-button " onclick="removeModal()" type="submit">Zatvoriť
+                </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <three-level-menu>
 </three-level-menu>
@@ -38,18 +57,50 @@
     </div>
 
     <div class="game-container-settings">
-        <button class="game-container-settings-button" id="start">Štart</button>
-        <button class="game-container-settings-button" id="reset">Reset</button>
-        <button class="game-container-settings-button" id="demo">Demo</button>
+        <button class="game-container-settings-button" id="start" onclick="gameStart()">Štart</button>
+        <button class="game-container-settings-button" id="demo" onclick="demo()">Demo</button>
         <span class="" id="time">00:00</span>
     </div>
 
 
-    <canvas class="game-container-canvas" height="500" id="game-canvas" width="1000">
-        <img alt="Game picture" height="500" id="game-image"
-             src="../../app/assets/images/1000x500.png"
-             width="1000">
-    </canvas>
+    <div class="game-container-canvas" id="game-canvas">
+
+        <img alt="Game picture" class="game-container-canvas-image" height="500" width="1000" src="../../app/assets/images/1000x500.png"/>
+
+
+        <div id="sky-drop">
+            <img alt="sky" height="282" id="sky" src="../../app/assets/images/palencar/01.png"
+                 width="850"/>
+        </div>
+
+        <div id="bottom-left-drop">
+            <img alt="bottom-left" height="136" width="284" id="bottom-left" src="../../app/assets/images/palencar/02.png"/>
+        </div>
+
+        <div id="mid-left-drop">
+            <img alt="mid-left" height="451" width="323" id="mid-left" src="../../app/assets/images/palencar/03.png"/>
+        </div>
+
+        <div id="roof-drop">
+            <img alt="roof" height="147" width="415" id="roof" src="../../app/assets/images/palencar/04.png"/>
+        </div>
+
+        <div id="under-roof-drop">
+            <img alt="under-roof" height="327" width="459" id="under-roof" src="../../app/assets/images/palencar/05.png"/>
+        </div>
+
+        <div id="balcony-drop">
+            <img alt="balcony" height="94" width="343" id="balcony" src="../../app/assets/images/palencar/06.png"/>
+        </div>
+
+        <div id="tower-drop">
+            <img alt="tower" height="500" width="165" id="tower" src="../../app/assets/images/palencar/07.png"/>
+        </div>
+
+        <div id="dome-drop">
+            <img alt="dome" height="500" width="281" id="dome" src="../../app/assets/images/palencar/08.png"/>
+        </div>
+    </div>
 </section>
 </body>
 </html>
