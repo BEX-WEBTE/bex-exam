@@ -34,7 +34,6 @@
 
 #text-div {
     margin-bottom: 15px;
-    border-bottom: 1px solid black;
 }
 
 
@@ -82,7 +81,6 @@ ul#country-chooser li:hover {
 
 .active-country {
     font-weight: bold;
-    text-decoration: underline;
 }
 
 #more-names-button {
@@ -118,3 +116,9 @@ ul#country-chooser li:hover {
     padding-bottom: 0;
 }
 
+.name-day-inputs-container {
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgba(252, 252, 252, 0.3);
+
+}

@@ -2,12 +2,12 @@ class NameDayFinderComponent extends HTMLElement {
     connectedCallback() {
         this.innerHTML = '<div id="text-div">'
             + '<span id="intro-text-name" class="thumbnail-container-event-title ">Dnes '
-            + '<em id="text-today" class="bold-max">??.??.</em> meniny oslavuje:'
-            + '<br><em id="text-name" class="bold-max"> XML nenačítané</em>'
+            + '<span id="text-today" class="bold-max">??.??.</span> meniny oslavuje:'
+            + '<br><span id="text-name" class="bold-max"> XML nenačítané</span>'
             + '</span>'
-            + '<br><em id="more-names-label" class="bold-max">Všetky mená: </em><p id="more-names">XML nenačítané</p>'
+            + '<br><span id="more-names-label" class="bold-max">Všetky mená: </span><p id="more-names">XML nenačítané</p>'
             + '<br><span id="intro-text-holiday" class="thumbnail-container-event-title ">Dnes oslavujeme sviatok:'
-            + '<br><em id="text-holiday" class="bold-max"> XML nenačítané </em></span></div>';
+            + '<br><span id="text-holiday" class="bold-max"> XML nenačítané </span></span></div>';
 
 
         this.innerHTML +=
@@ -19,9 +19,9 @@ class NameDayFinderComponent extends HTMLElement {
             + '<input class="nameday-input" type="text" id="holiday-input" name="holiday-input" disabled></div>' +
 
             '<div class="nameday-input-div"><label for="name-input">Meno  </label>'
-            + '<input class="nameday-input" type="text" id="name-input" name="name-input">' +
+            + '<input class="nameday-input" type="text" id="name-input" name="name-input"></div>' +
 
-            '<div id="more-names-under-input-div"><em class="bold-max">Všetky mená: </em>'
+            '<div id="more-names-under-input-div"><span class="bold-max">Všetky mená: </span>'
             + '<span id="more-names-under-input">XML nenačítané</span>'
             + '</div>' +
             '</div>';
