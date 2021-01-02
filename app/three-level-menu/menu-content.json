@@ -18,6 +18,96 @@
           "id": "tasks",
           "title": "Úlohy",
           "path": "app/checklist/html/checklist.html"
+        },
+        {
+          "id": "tasks",
+          "title": "Obľúbené zadania",
+          "child": [
+            {
+              "id": "zadanie1",
+              "title": "Zadanie1",
+              "path": "app/checklist/html/checklist.html",
+              "child": [
+                {
+                  "id": "aboutMe",
+                  "title": "O mne",
+                  "path": "http://147.175.121.202/~xsremanak/97936zadanie1/html/index.html"
+                }
+              ]
+            },
+            {
+              "id": "zadanie2",
+              "title": "Zadanie2",
+              "path": "app/checklist/html/checklist.html",
+              "child": [
+                {
+                  "id": "aboutMe",
+                  "title": "O mne",
+                  "path": "http://147.175.121.202/~xsremanak/97936zadanie1/html/index.html"
+                }
+              ]
+            },
+            {
+              "id": "zadanie3",
+              "title": "Zadanie3",
+              "path": "app/checklist/html/checklist.html",
+              "child": [
+                {
+                  "id": "aboutMe",
+                  "title": "O mne",
+                  "path": "http://147.175.121.202/~xsremanak/97936zadanie1/html/index.html"
+                }
+              ]
+            },
+            {
+              "id": "zadanie4",
+              "title": "Zadanie4",
+              "path": "app/checklist/html/checklist.html",
+              "child": [
+                {
+                  "id": "aboutMe",
+                  "title": "O mne",
+                  "path": "http://147.175.121.202/~xsremanak/97936zadanie1/html/index.html"
+                }
+              ]
+            },
+            {
+              "id": "zadanie5",
+              "title": "Zadanie5",
+              "path": "app/checklist/html/checklist.html",
+              "child": [
+                {
+                  "id": "aboutMe",
+                  "title": "O mne",
+                  "path": "http://147.175.121.202/~xsremanak/97936zadanie1/html/index.html"
+                }
+              ]
+            },
+            {
+              "id": "zadanie6",
+              "title": "Zadanie6",
+              "path": "app/checklist/html/checklist.html",
+              "child": [
+                {
+                  "id": "aboutMe",
+                  "title": "O mne",
+                  "path": "http://147.175.121.202/~xsremanak/97936zadanie1/html/index.html"
+                }
+              ]
+            },
+            {
+              "id": "zadanie7",
+              "title": "Zadanie7",
+              "path": "app/checklist/html/checklist.html",
+              "child": [
+                {
+                  "id": "aboutMe",
+                  "title": "O mne",
+                  "path": "http://147.175.121.202/~xsremanak/97936zadanie1/html/index.html"
+                }
+              ]
+            }
+          ]
         }
       ]
     },

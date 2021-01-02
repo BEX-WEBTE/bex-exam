@@ -50,10 +50,10 @@ class ThreeLevelMenuComponent extends HTMLElement {
     }
 
     loadCss() {
-        this.createCssLink("app/css/header.css");
+        this.createCssLink("app/shared/css/header.css");
         this.createCssLink("app/three-level-menu/css/three-level-menu.component.css");
         this.createCssLink("style.css");
-        this.createCssLink("app/css/print.css");
+        this.createCssLink("app/shared/css/print.css");
     }
 
     async loadMenuContent() {
@@ -100,6 +100,7 @@ class ThreeLevelMenuComponent extends HTMLElement {
         if (this.areIdSame(item.id, "feiStu")) {
             completePath = item.path;
         }
+
         link.setAttribute("href", completePath);
         this.setLinkActive(link);
     }
@@ -117,33 +118,41 @@ class ThreeLevelMenuComponent extends HTMLElement {
     createListFromMenuContent() {
         let list = this.getElementById("menu");
         this.menuContent.forEach((item) => {
-            this.createList(list, item);
+            this.createList(list, item, 0);
         });
     }
 
-    searchInChildrenAndCreateListForGrandChild(item, listItem) {
+    searchInChildrenAndCreateListForGrandChild(item, listItem, childLevel) {
         let newList = this.createHtmlList();
         item.child.forEach((child) => {
             listItem.appendChild(newList);
-            this.createList(newList, child);
+            this.createList(newList, child, childLevel);
         })
     }
 
-    createList(list, item) {
+    createList(list, item, childLevel) {
         let listItem = this.createHtmlListItem();
         let link = this.createHtmlLink();
         let div = this.createHtmlDiv();
         this.setAttributeAndTextOfLinkFromItem(link, item);
+        if (this.areIdSame(item.id, "home")) {
+            div.classList.add("item-link-home");
+        }
         div.appendChild(link)
         listItem.appendChild(div);
         list.appendChild(listItem);
-
+        if (childLevel > 2) {
+            list.classList.add("item-child-right");
+        }
         if (item.child) {
-            this.searchInChildrenAndCreateListForGrandChild(item, listItem);
+            listItem.classList.add("item-root");
+            this.searchInChildrenAndCreateListForGrandChild(item, listItem, childLevel + 1);
         }
 
     }
 }
+
+
 
 if (ThreeLevelMenuComponent)
     customElements.define('three-level-menu', ThreeLevelMenuComponent);
