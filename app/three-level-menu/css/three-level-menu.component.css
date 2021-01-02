@@ -1,7 +1,3 @@
-#menu > .item > .navigation-bar-inner-row {
-
-}
-
 .item {
     position: relative;
     display: inline-block;
@@ -12,13 +8,12 @@
 }
 
 .navigation-bar-inner-row {
-
     display: none;
     position: absolute;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.8);
     z-index: 1;
-    width: 100px;
+    width: 88px;
     border-bottom: 3px solid black;
     text-align: center;
     transform: translatex(-50%);
@@ -31,9 +26,15 @@
     margin-top: 10px;
 }
 
+.navigation-bar-inner-row .item-link {
+    transition: all 0.2s ease-in;
+    border-radius: 5px;
+}
+
 .navigation-bar-inner-row .item-link:hover {
     width: 100%;
     height: 100%;
+    transform: scale(1.1,1.1);
 }
 
 
