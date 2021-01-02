@@ -10,14 +10,15 @@
     border: solid 3px black;
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(3px);
-    transition:border,box-shadow  ease-in-out 0.5s;
+    transition: border-color, box-shadow ease-in-out 0.5s;
     width: 400px;
     z-index: 1;
-
 }
-.navigation-bar:hover{
-    border-color: transparent;
+
+.navigation-bar:hover {
+    border-color: rgba(30, 30, 30, 0);
     box-shadow: 0 4px 8px 0 rgba(30, 30, 30, 0.3);
+
 }
 
 .navigation-bar-row {
