@@ -1,20 +1,20 @@
-.contact-content{
+.contact-content {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 30px;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
     min-width: 280px;
 }
 
-.contact-top{
+.contact-top {
     position: absolute;
     top: 20px !important;
     margin-left: auto;
     margin-right: auto;
 }
 
-.contact-img{
+.contact-img {
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
@@ -24,14 +24,14 @@
     overflow: hidden;
 }
 
-.contact-name{
+.contact-name {
     font-size: x-large;
     text-align: center;
     margin-top: 30px;
     margin-bottom: 20px;
 }
 
-.contact-table{
+.contact-table {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;

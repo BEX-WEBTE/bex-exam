@@ -5,35 +5,35 @@ let timerInterval;
 
 function posCheck() {
     let full = true;
-    if (correct["sky"] === 0){
+    if (correct["sky"] === 0) {
         full = false;
     }
 
-    if (correct["bottom-left"] === 0){
+    if (correct["bottom-left"] === 0) {
         full = false;
     }
 
-    if (correct["mid-left"] === 0){
+    if (correct["mid-left"] === 0) {
         full = false;
     }
 
-    if (correct["roof"] === 0){
+    if (correct["roof"] === 0) {
         full = false;
     }
 
-    if (correct["under-roof"] === 0){
+    if (correct["under-roof"] === 0) {
         full = false;
     }
 
-    if (correct["balcony"] === 0){
+    if (correct["balcony"] === 0) {
         full = false;
     }
 
-    if (correct["tower"] === 0){
+    if (correct["tower"] === 0) {
         full = false;
     }
 
-    if (correct["dome"] === 0){
+    if (correct["dome"] === 0) {
         full = false;
     }
 
@@ -223,8 +223,6 @@ function timer() {
     let formattedSS = sec.toString().padStart(2, "0");
     let formattedMM = min.toString().padStart(2, "0");
 
-    console.log(sec);
-    console.log(min);
 
     document.getElementById("time").innerHTML = formattedMM + ":" + formattedSS;
 }
@@ -290,9 +288,7 @@ function imageTransisionSwitch(turnedOn, id) {
     if (turnedOn) {
         img.style.transition = "all 2s";
         img.style.transitionDelay = 0.5;
-    }
-
-    else {
+    } else {
         img.style.transition = "";
         img.style.transitionDelay = "";
     }

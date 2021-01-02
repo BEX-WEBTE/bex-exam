@@ -153,7 +153,6 @@ class ThreeLevelMenuComponent extends HTMLElement {
 }
 
 
-
 if (ThreeLevelMenuComponent)
     customElements.define('three-level-menu', ThreeLevelMenuComponent);
 
