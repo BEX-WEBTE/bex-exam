@@ -11,7 +11,7 @@
     <link href="../css/game.css" rel="stylesheet">
     <link href="../../app/shared/css/breadcrumbs.css" rel="stylesheet">
     <link href="../../favicon.png" rel="icon" type="image/png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="../js/canvas/coordinates.js"></script>
     <script src="../js/puzzle/piece/imagePiece.js"></script>
     <script src="../js/puzzle/piece/piece.js"></script>
@@ -59,7 +59,8 @@
 
     <div class="game-container-settings">
 
-        <button class="game-container-settings-button sounds-button material-icons" id="sounds" value=true onclick="sounds(this)">
+        <button class="game-container-settings-button sounds-button material-icons" id="sounds" onclick="sounds(this)"
+                value=true>
             volume_up
         </button>
         <div class="dropdown game-container-settings-difficulty">

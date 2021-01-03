@@ -56,11 +56,12 @@
 }
 
 @media only screen and (min-width: 700px) {
-    .content-table{
-        width: 100%!important;
-        min-width: 70%!important;
+    .content-table {
+        width: 100% !important;
+        min-width: 70% !important;
     }
 }
+
 @media only screen and (max-width: 700px) {
     .content-table th,
     .content-table td {

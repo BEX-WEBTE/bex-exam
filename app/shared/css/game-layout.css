@@ -66,3 +66,21 @@
     height: auto;
 }
 
+.navigation-bar {
+    position: absolute;
+    left: 50%;
+}
+
+html {
+    position: relative;
+!important;
+}
+
+body {
+    position: static !important;
+}
+
+.breadcrumbs-container {
+    top: 90px !important;
+    left: 10.8% !important;
+}

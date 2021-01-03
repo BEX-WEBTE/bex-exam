@@ -32,6 +32,11 @@ class ThreeLevelMenuComponent extends HTMLElement {
         return pathPrefix;
     }
 
+    getActualViewName() {
+        let pathNameArray = window.location.pathname.split("/");
+        return pathNameArray[pathNameArray.length - 1];
+    }
+
     async loadHtml() {
         const response = await fetch(this.getWebPrefix(2) + "app/three-level-menu/three-level-menu.component.html")
         return await response.text();
@@ -54,6 +59,8 @@ class ThreeLevelMenuComponent extends HTMLElement {
         this.createCssLink("app/three-level-menu/css/three-level-menu.component.css");
         this.createCssLink("style.css");
         this.createCssLink("app/shared/css/print.css");
+        if (this.getActualViewName() === "game.html")
+            this.createCssLink("app/shared/css/game-layout.css");
     }
 
     async loadMenuContent() {
