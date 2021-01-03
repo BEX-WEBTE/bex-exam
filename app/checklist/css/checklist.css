@@ -4,15 +4,14 @@
     margin-right: auto;
     margin-bottom: 50px;
     font-size: larger;
-    min-width: 300px;
     border-collapse: separate;
     border: 3px solid black;
-    overflow: hidden;
     border-radius: 20px;
     -moz-border-radius: 20px;
-
-
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    width: auto;
+    max-width: 400px !important;
 }
 
 .content-table thead tr {
@@ -33,29 +32,12 @@
 }
 
 .scrollable-table {
-    margin-left: auto;
-    margin-right: auto;
+
 }
 
 
 .color-tasks {
     background-color: #EAEAEA;
-}
-
-.color-palencar {
-    background-color: #C5F5FF;
-}
-
-.color-peluha {
-    background-color: #FFF7B0;
-}
-
-.color-sremanak {
-    background-color: #FFC5C5;
-}
-
-.color-sokol {
-    background-color: #D7FFC5;
 }
 
 
@@ -64,7 +46,61 @@
     height: 30px;
 }
 
-.a-link-color {
-    text-decoration: none;
+.a-link-color:hover {
     color: black;
+    font-weight: 900;
+}
+
+.source-table {
+    width: auto !important;
+}
+
+@media only screen and (min-width: 700px) {
+    .content-table{
+        width: 100%!important;
+        min-width: 70%!important;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .content-table th,
+    .content-table td {
+        padding: 13px 0;
+        display: block;
+        width: 100% !important;
+        margin-bottom: 0 !important;
+    }
+
+    .content-table:not(.source-table) tr td:not(.task), th {
+        display: none;
+    }
+
+    .michal:before, .matej:before, .kiko:before, .lubos:before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        padding: 0 3px 0 3px;
+        margin-right: 5px;
+        border-radius: 50%;
+    }
+
+    .lubos:before {
+        background-color: #FFC5C5;
+    }
+
+    .matej:before {
+        background-color: #FFF7B0;
+    }
+
+    .kiko:before {
+        background-color: #D7FFC5;
+    }
+
+    .michal:before {
+        background-color: #C5F5FF;
+    }
+
+    .content-table:not(.source-table) .color-tasks {
+        display: none !important;
+    }
 }
