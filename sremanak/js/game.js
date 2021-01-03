@@ -88,7 +88,8 @@ function gameDone() {
     gameEngine.createModalWithText(windowDimension, gameDoneText);
     puzzle.turnOfListeners();
     puzzle.removeTargets();
-    gameEngine.playDoneSound();
+    if (areSoundsOn())
+        gameEngine.playDoneSound();
     let startButton = document.getElementById("start");
     setButtonTextAndSwitchRenderer(startButton, "Reset", false);
 }
@@ -144,6 +145,21 @@ function difficulty(event) {
     let difficulty = document.getElementById("difficulty");
     difficulty.innerText = event.innerText;
     difficulty.value = event.value;
+}
+
+function areSoundsOn() {
+    let sounds = document.getElementById("sounds");
+    return sounds.value === "true";
+}
+
+function sounds(event) {
+    if (areSoundsOn()) {
+        event.innerText = "volume_off"
+        event.value = false;
+    } else {
+        event.innerText = "volume_up"
+        event.value = true;
+    }
 }
 
 async function render() {

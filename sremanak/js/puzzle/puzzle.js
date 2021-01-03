@@ -244,6 +244,7 @@ class Puzzle {
     pieceInTarget(piece, actor) {
         piece.inTarget = true;
         this.actorInTargetPlace(actor);
+        if(areSoundsOn())
         gameEngine.playTickSound();
         document.body.style.cursor = 'default';
         gameEngine.canvasLayer.batchDraw()

@@ -15,3 +15,7 @@
     display: -moz-inline-box;
     transition: letter-spacing 1s;
 }
+
+.sounds-button{
+    vertical-align:middle;
+}
