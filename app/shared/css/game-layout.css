@@ -69,11 +69,11 @@
 .navigation-bar {
     position: absolute;
     left: 50%;
+    z-index: 5;
 }
 
 html {
     position: relative;
-!important;
 }
 
 body {

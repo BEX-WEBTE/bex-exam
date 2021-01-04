@@ -19,3 +19,9 @@
 .sounds-button {
     vertical-align: middle;
 }
+
+@media only screen and (max-width: 400px) {
+    .game-container-settings {
+       justify-content: space-between;
+    }
+}
