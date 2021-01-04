@@ -34,3 +34,7 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+.top-modal{
+    top: 50vh;
+}

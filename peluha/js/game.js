@@ -258,10 +258,11 @@ function showDemo() {
 function showDemoWarning() {
     const waitHeader = document.getElementById("wait-for-demo");
 
+    waitHeader.classList.add("top-modal");
     waitHeader.style.opacity = "1";
     setTimeout(function () {
         waitHeader.style.opacity = "0";
-
+        waitHeader.classList.remove("top-modal");
     }, 2000)
 
 }
